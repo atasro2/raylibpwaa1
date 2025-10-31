@@ -1,0 +1,27 @@
+gfx: sheet-1B378.png
+alphaencode: true
+parts:
+  - x: 96
+    y: 0
+    w: 32
+    h: 16
+  - x: 128
+    y: 0
+    w: 32
+    h: 16
+  - x: 160
+    y: 0
+    w: 32
+    h: 16
+  - x: 0
+    y: 0
+    w: 32
+    h: 16
+  - x: 32
+    y: 0
+    w: 32
+    h: 16
+  - x: 64
+    y: 0
+    w: 32
+    h: 16

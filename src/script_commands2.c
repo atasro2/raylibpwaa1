@@ -766,15 +766,15 @@ bool32 Command35(struct ScriptContext *scriptCtx)
         scriptCtx->scriptPtr++;
         temp = *scriptCtx->scriptPtr;
         scriptCtx->scriptPtr++;
-        heapPtr = eScriptHeap;
+        heapPtr = (u32*)eScriptHeap;
         heapPtr += temp + 1;
         jmpArgs = (u16 *)heapPtr;
         offset = jmpArgs[0] / 2;
         temp = jmpArgs[1];
         scriptCtx->currentSection = temp + 0x80;
-        heapPtr = eScriptHeap;
+        heapPtr = (u32*)eScriptHeap;
         heapPtr += temp + 1;
-        scriptCtx->scriptSectionPtr = eScriptHeap + *heapPtr;
+        scriptCtx->scriptSectionPtr = (u16*)(eScriptHeap + *heapPtr);
         scriptCtx->scriptPtr = scriptCtx->scriptSectionPtr + offset;
     }
     else
@@ -795,12 +795,12 @@ bool32 Command36(struct ScriptContext *scriptCtx)
     scriptCtx->scriptPtr++;
     idx = *scriptCtx->scriptPtr;
     scriptCtx->scriptPtr++;
-    heapPtr = eScriptHeap;
+    heapPtr = (u32*)eScriptHeap;
     ptr = (u16 *)(heapPtr + idx + 1);
     offset = ptr[0] / 2;
     idx = ptr[1];
     scriptCtx->currentSection = idx + 0x80;
-    scriptCtx->scriptSectionPtr = eScriptHeap + ((u32 *)eScriptHeap)[idx + 1];
+    scriptCtx->scriptSectionPtr = (u16*)(eScriptHeap + ((u32 *)eScriptHeap)[idx + 1]);
     scriptCtx->scriptPtr = scriptCtx->scriptSectionPtr + offset;
     return 0;
 }

@@ -29,7 +29,7 @@
 
 struct Background
 {
-    /* +0x00 */ u8 * bgData;
+    /* +0x00 */ char * bgData;
     /* +0x04 */ u32 controlBits;
 };
 
@@ -74,5 +74,11 @@ void SlideInBG2Window(u32, u32);
 void UpdateBG2Window(struct CourtRecord *);
 void SetTextboxNametag(u32, u32);
 void UpdateBGTilemaps();
+
+void DrawTextbox(void);
+void InitTextbox(void);
+
+void LoadBackgroundFromFile(char * fileName);
+void DrawBackground(void);
 
 #endif//GUARD_BACKGROUND_H

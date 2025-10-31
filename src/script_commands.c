@@ -231,7 +231,7 @@ bool32 Command06(struct ScriptContext * scriptCtx)
     }
     else
     {
-        m4aSongNumStop(soundNum);
+        //m4aSongNumStop(soundNum);
     }
     scriptCtx->scriptPtr++;
     return 0;

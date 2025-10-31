@@ -1,0 +1,122 @@
+sheet: 1B378
+frames:
+- duration: 20
+  Sprites:
+  - part: 0
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+  - part: 1
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+- duration: 20
+  Sprites:
+  - part: 2
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+  - part: 3
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+- duration: 20
+  Sprites:
+  - part: 4
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+  - part: 5
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+- duration: 20
+  Sprites:
+  - part: 2
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+  - part: 3
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+- duration: 255
+  Sprites:
+  - part: 0
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+    x: 88
+    y: 72
+  - part: 1
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72
+    x: 120
+    y: 72

@@ -1,6 +1,9 @@
 #ifndef GUARD_MAIN_H
 #define GUARD_MAIN_H
 
+#include "raylib.h"
+#include <string.h>
+
 #define SOUND_FLAG_DISABLE_SE (1 << 0)
 #define SOUND_FLAG_DISABLE_BGM (1 << 1)
 #define SOUND_FLAG_DISABLE_CUE (1 << 2)
@@ -143,6 +146,11 @@ struct OamAttrs
     /* +0x02 */ u16 attr1;
     /* +0x04 */ u16 attr2;
     /* +0x06 */ u16 attr3;
+    u16 width;
+    u16 height;
+    u32 texU;
+    u32 texV;
+    struct Texture texture;
 };
 
 extern struct Joypad gJoypad;

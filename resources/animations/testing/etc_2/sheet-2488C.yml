@@ -1,0 +1,11 @@
+gfx: sheet-2488C.png
+alphaencode: true
+parts:
+  - x: 0
+    y: 0
+    w: 16
+    h: 32
+  - x: 16
+    y: 0
+    w: 8
+    h: 32

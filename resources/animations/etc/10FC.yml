@@ -1,0 +1,23 @@
+sheet: sheet-26284
+arrangements:
+  '24':
+  - part: 0
+    x: 112
+    y: 48
+    palette: 0
+  '32':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+    id: 79
+    enabled: False
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

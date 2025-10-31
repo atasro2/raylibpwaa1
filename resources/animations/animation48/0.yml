@@ -1,0 +1,28 @@
+sheet: 26284
+frames:
+- duration: 1
+  Sprites:
+  - part: 0
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+- duration: 255
+  Sprites:
+  - part: 0
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+    x: 112
+    y: 48
+    x: 112
+    y: 48

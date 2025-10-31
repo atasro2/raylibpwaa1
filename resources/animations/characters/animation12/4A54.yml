@@ -1,0 +1,181 @@
+sheet: sheet-19150
+arrangements:
+  '56':
+  - part: 33
+    x: 56
+    y: 72
+  - part: 34
+    x: 120
+    y: 72
+  - part: 35
+    x: 152
+    y: 104
+  - part: 36
+    x: 152
+    y: 72
+  - part: 37
+    x: 168
+    y: 104
+  - part: 38
+    x: 168
+    y: 72
+  - part: 39
+    x: 64
+    y: 136
+  - part: 40
+    x: 160
+    y: 136
+  - part: 41
+    x: 88
+    y: 40
+  - part: 42
+    x: 104
+    y: 8
+  - part: 43
+    x: 136
+    y: 8
+  - part: 44
+    x: 152
+    y: 16
+  - part: 45
+    x: 136
+    y: 0
+  - part: 46
+    x: 120
+    y: 0
+  '116':
+  - part: 33
+    x: 56
+    y: 72
+  - part: 34
+    x: 120
+    y: 72
+  - part: 35
+    x: 152
+    y: 104
+  - part: 36
+    x: 152
+    y: 72
+  - part: 37
+    x: 168
+    y: 104
+  - part: 38
+    x: 168
+    y: 72
+  - part: 39
+    x: 64
+    y: 136
+  - part: 40
+    x: 160
+    y: 136
+  - part: 41
+    x: 88
+    y: 40
+  - part: 42
+    x: 104
+    y: 8
+  - part: 43
+    x: 136
+    y: 8
+  - part: 44
+    x: 152
+    y: 16
+  - part: 47
+    x: 112
+    y: 48
+  - part: 48
+    x: 112
+    y: 32
+  - part: 45
+    x: 136
+    y: 0
+  - part: 46
+    x: 120
+    y: 0
+  '184':
+  - part: 33
+    x: 56
+    y: 72
+  - part: 34
+    x: 120
+    y: 72
+  - part: 35
+    x: 152
+    y: 104
+  - part: 36
+    x: 152
+    y: 72
+  - part: 37
+    x: 168
+    y: 104
+  - part: 38
+    x: 168
+    y: 72
+  - part: 39
+    x: 64
+    y: 136
+  - part: 40
+    x: 160
+    y: 136
+  - part: 41
+    x: 88
+    y: 40
+  - part: 42
+    x: 104
+    y: 8
+  - part: 43
+    x: 136
+    y: 8
+  - part: 44
+    x: 152
+    y: 16
+  - part: 49
+    x: 112
+    y: 32
+  - part: 50
+    x: 112
+    y: 48
+  - part: 45
+    x: 136
+    y: 0
+  - part: 46
+    x: 120
+    y: 0
+  '252':
+frames:
+- duration: 30
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 56
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 116
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 184
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 116
+- duration: 100
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 56
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 56

@@ -33,6 +33,6 @@ extern void (*gInvestigationRoomUpdateFunctions[])(struct Main *);
 void InvestigationSetPersonAnimation(u32 arg0, u32 arg1, u32 arg2);
 void InvestigationSetScriptSectionAndFlag(u32 section, u32 flagId);
 
-#define LOADEXAMDATA(x) DmaCopy16(3, (x), gExaminationData, sizeof(x))
+#define LOADEXAMDATA(x) memcpy(gExaminationData, (x), sizeof(x))
 
 #endif//GUARD_CASE_DATA_H

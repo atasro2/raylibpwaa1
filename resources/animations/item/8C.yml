@@ -1,0 +1,29 @@
+sheet: sheet-8AC
+arrangements:
+  '24':
+  - part: 0
+    x: 0
+    y: 112
+  - part: 1
+    x: 32
+    y: 112
+  - part: 2
+    x: 48
+    y: 104
+  - part: 3
+    x: 8
+    y: 96
+  '44':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

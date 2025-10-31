@@ -6,6 +6,15 @@
 #include "main.h"
 #include "declarations.h"
 
+static inline void DmaCopy16(int, void*, void *, size_t) {
+    return;
+}
+static inline void DmaFill16(int, int, void *, size_t){
+    return;
+}    
+static inline void DmaFill32(int, int, void *, size_t){
+    return;
+}    
 //#define NONMATCHING
 
 // Prevent cross-jump optimization.
@@ -45,8 +54,5 @@
 #define SPRITE_ATTR0_CLEAR SPRITE_ATTR0(0, ST_OAM_AFFINE_ERASE, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE)
 
 #define GET_MAP_TILE_INDEX(tiley, tilex, yoff, xoff) ((tiley) * 32 + ((yoff) * 32) + ((tilex) + (xoff)))
-
-
-#define KEY_NEW() ({ (*(u16 *)REG_ADDR_KEYINPUT) ^ KEYS_MASK; })
 
 #endif//GUARD_GLOBAL_H

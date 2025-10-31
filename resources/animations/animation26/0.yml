@@ -1,0 +1,50 @@
+sheet: 1A830
+frames:
+- duration: 1
+  Sprites:
+  - part: 0
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+  - part: 1
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+- duration: 255
+  Sprites:
+  - part: 0
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+    x: 0
+    y: 96
+  - part: 1
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+    x: 64
+    y: 128
+    x: 64
+    y: 128

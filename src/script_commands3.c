@@ -120,6 +120,7 @@ bool32 Command46(struct ScriptContext * scriptCtx)
     u8 *r6;
     u16 *r3;
     scriptCtx->scriptPtr++;
+    /*
     if(*scriptCtx->scriptPtr) 
     {
         gMain.horizontolBGScrollSpeed = -0xE;
@@ -139,6 +140,7 @@ bool32 Command46(struct ScriptContext * scriptCtx)
             gBG2MapBuffer[GET_MAP_TILE_INDEX(i, j, 0, 1)] = *r3 + 0x80;
         }
     }
+    */
     r6 += 32 + 20*30*2;
     DmaCopy16(3, r6, eUnknown_02031FC0, 30*20*TILE_SIZE_4BPP);
     gIORegisters.lcd_dispcnt |= DISPCNT_BG2_ON;

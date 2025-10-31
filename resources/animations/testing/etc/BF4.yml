@@ -1,0 +1,179 @@
+sheet: sheet-1B99C
+arrangements:
+  '72':
+  - part: 0
+    x: 120
+    y: 72
+    palette: 0
+  - part: 1
+    x: 88
+    y: 72
+    palette: 0
+  - part: 2
+    x: 56
+    y: 56
+    palette: 0
+  '88':
+  - part: 0
+    x: 120
+    y: 72
+    palette: 0
+  - part: 3
+    x: 88
+    y: 72
+    palette: 0
+  - part: 4
+    x: 56
+    y: 24
+    palette: 0
+  - part: 5
+    x: 56
+    y: 8
+    palette: 0
+  '108':
+  - part: 0
+    x: 120
+    y: 72
+    palette: 0
+  - part: 6
+    x: 88
+    y: 72
+    palette: 0
+  - part: 7
+    x: 56
+    y: 40
+    palette: 0
+  - part: 8
+    x: 40
+    y: 72
+    palette: 0
+  - part: 9
+    x: 40
+    y: 40
+    palette: 0
+  '132':
+  - part: 0
+    x: 120
+    y: 72
+    palette: 0
+  - part: 10
+    x: 56
+    y: 56
+    palette: 0
+  - part: 11
+    x: 40
+    y: 56
+    palette: 0
+  - part: 12
+    x: 40
+    y: 88
+    palette: 0
+  - part: 13
+    x: 72
+    y: 88
+    palette: 0
+  - part: 14
+    x: 104
+    y: 88
+    palette: 0
+  '160':
+  - part: 0
+    x: 120
+    y: 72
+    palette: 0
+  - part: 15
+    x: 56
+    y: 56
+    palette: 0
+  - part: 16
+    x: 40
+    y: 56
+    palette: 0
+  - part: 17
+    x: 40
+    y: 88
+    palette: 0
+  - part: 18
+    x: 72
+    y: 88
+    palette: 0
+  - part: 19
+    x: 104
+    y: 88
+    palette: 0
+  '188':
+  - part: 0
+    x: 120
+    y: 72
+    palette: 0
+  - part: 20
+    x: 56
+    y: 56
+    palette: 0
+  - part: 21
+    x: 24
+    y: 56
+    palette: 0
+  '204':
+  - part: 22
+    x: 88
+    y: 56
+    palette: 0
+  - part: 23
+    x: 24
+    y: 56
+    palette: 0
+  '216':
+frames:
+- duration: 13
+  flag10: False
+  flag40: False
+  sfx:
+    id: 82
+    enabled: True
+  action:
+  arrangement: 72
+- duration: 15
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 88
+- duration: 13
+  flag10: False
+  flag40: False
+  sfx:
+    id: 98
+    enabled: False
+  action:
+  arrangement: 108
+- duration: 13
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 132
+- duration: 13
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 160
+- duration: 13
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 188
+- duration: 13
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 204
+- duration: 253
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 72

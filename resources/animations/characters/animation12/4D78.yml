@@ -1,0 +1,163 @@
+sheet: sheet-19150
+arrangements:
+  '104':
+  - part: 57
+    x: 64
+    y: 72
+  - part: 58
+    x: 128
+    y: 72
+  - part: 59
+    x: 160
+    y: 72
+  - part: 60
+    x: 160
+    y: 104
+  - part: 61
+    x: 64
+    y: 136
+  - part: 62
+    x: 88
+    y: 8
+  - part: 63
+    x: 88
+    y: 0
+  - part: 64
+    x: 120
+    y: 0
+  - part: 65
+    x: 112
+    y: 80
+  - part: 66
+    x: 104
+    y: 48
+  '148':
+  - part: 57
+    x: 64
+    y: 72
+  - part: 58
+    x: 128
+    y: 72
+  - part: 59
+    x: 160
+    y: 72
+  - part: 60
+    x: 160
+    y: 104
+  - part: 61
+    x: 64
+    y: 136
+  - part: 62
+    x: 88
+    y: 8
+  - part: 63
+    x: 88
+    y: 0
+  - part: 64
+    x: 120
+    y: 0
+  - part: 65
+    x: 112
+    y: 80
+  - part: 67
+    x: 104
+    y: 48
+  '192':
+  - part: 57
+    x: 64
+    y: 72
+  - part: 58
+    x: 128
+    y: 72
+  - part: 59
+    x: 160
+    y: 72
+  - part: 60
+    x: 160
+    y: 104
+  - part: 61
+    x: 64
+    y: 136
+  - part: 62
+    x: 88
+    y: 8
+  - part: 63
+    x: 88
+    y: 0
+  - part: 64
+    x: 120
+    y: 0
+  '228':
+frames:
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 104
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 148
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 148
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 104
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 148
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 148
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 104
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 148
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 254
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 104

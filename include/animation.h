@@ -3,6 +3,8 @@
 #include "background.h"
 #include "utils.h"
 
+#include "animation_yaml.h"
+
 #define ANIM_DESTROY 0xFD
 #define ANIM_STOP 0xFE
 #define ANIM_LOOP 0xFF
@@ -35,12 +37,21 @@ struct AnimationInfo
     /* +0x03 */ u8 unk3; // padding?
     /* +0x04 */ s16 xOrigin;
     /* +0x06 */ s16 yOrigin;
+
+    /* these should be unused */
     /* +0x08 */ u8 *volatile animFrameDataStartPtr; // !! THESE 4 POINTERS ARE VOLATILE TO MATCH MoveAnimationTilesToRam AND THAT COULD BE INCORRECT
     /* +0x0C */ u8 *volatile tileDataPtr;
     /* +0x10 */ u8 *volatile vramPtr;
     /* +0x14 */ u8 *volatile animGfxDataStartPtr;
-    /* +0x18 */ u8 paletteSlot;
-    /* +0x19 */ u8 spriteCount;
+    
+    char animName[32];
+    struct YMLAnimation animation;
+    struct YMLSheet sheet;
+    Texture2D sheetTexture;
+    Texture2D paletteTexture;
+    
+    /* +0x18 */ u8 paletteSlot; // shouldn't be needed
+    /* +0x19 */ u8 spriteCount; // shouldn't be needed
     /* +0x1A */ u8 priority;
     /* +0x1B */ u8 filler1B[1];
 };
@@ -65,6 +76,9 @@ struct AnimationListEntry
     /* +0x2E */ s16 specialEffectVar;
     /* +0x30 */ struct SpriteTemplate * spriteData;
     /* +0x34 */ struct AnimationFrame * frameData;
+    struct YMLArrangement * arrYml;
+    struct YMLFrame * frameDataYml;
+    Shader paletteShader;
     /* +0x38 */ u16 tileNum;
     /* +0x3A */ u8 animtionOamStartIdx;
     /* +0x3B */ u8 animtionOamEndIdx;
@@ -96,6 +110,7 @@ struct PersonAnimationData
     /* +0x04 */ u8* frameData;
     /* +0x08 */ u16 spriteCount;
     /* +0x0A */ u16 unkA; // padding?
+    char * folder;
 };
 
 struct AnimationData
@@ -109,6 +124,7 @@ struct AnimationData
     /* +0x11 */ u8 spriteCount;
     /* +0x12 */ u8 priority; // first nibble animation priority(?) second nibble sprite priority
     /* +0x13 */ u8 flags;
+    char * file;
 };
 
 struct SpriteSizeData {
@@ -149,6 +165,8 @@ struct AnimationBackupStruct * SaveAnimationDataToBuffer(struct AnimationBackupS
 
 u32 CheckRectCollisionWithAnim(struct Rect *);
 
+int ChangeAnimation(struct AnimationListEntry *animation, u32 animOffset);
+void DoAnimationAction(u32 action);
 void OffsetAllAnimations(s32 xOffset, s32 yOffset);
 void StartAnimationBlend(u32 arg0, u32 arg1);
 void ActivateAllAllocatedAnimations();
@@ -156,5 +174,14 @@ void DestroyAnimation(struct AnimationListEntry * animation);
 void MoveAnimationTilesToRam(bool32 arg0);
 void UpdateAnimations(u32 arg0);
 void SetCourtScrollPersonAnim(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+
+void FreeAnimation(struct AnimationListEntry *animation);
+u32 AdvanceAnimationYaml(struct AnimationListEntry * animation);
+void LoadAnimDataFileIntoInfo(struct AnimationInfo * animInfo, char * animFile);
+void LoadAnimDataIntoInfo(struct AnimationInfo * animInfo, char * animFolder, int animOff);
+void DrawAnimationYaml(void);
+void InitYMLAnim(void);
+
+extern const struct PersonAnimationData gPersonAnimData[];
 
 #endif//GUARD_ANIMATION_H

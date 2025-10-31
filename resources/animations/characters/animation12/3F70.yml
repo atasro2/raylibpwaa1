@@ -1,0 +1,53 @@
+sheet: sheet-146EC
+arrangements:
+  '24':
+  - part: 0
+    x: 48
+    y: 96
+  - part: 1
+    x: 112
+    y: 96
+  - part: 2
+    x: 176
+    y: 128
+  - part: 3
+    x: 176
+    y: 96
+  - part: 4
+    x: 56
+    y: 64
+  - part: 5
+    x: 144
+    y: 80
+  - part: 6
+    x: 152
+    y: 72
+  - part: 7
+    x: 88
+    y: 40
+  - part: 8
+    x: 104
+    y: 104
+  - part: 9
+    x: 88
+    y: 8
+  - part: 10
+    x: 88
+    y: 0
+  - part: 11
+    x: 120
+    y: 0
+  '76':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

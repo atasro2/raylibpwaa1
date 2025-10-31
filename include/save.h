@@ -31,7 +31,7 @@ struct SaveData
     /* +0x2650 */ struct AnimationBackupStruct backupAnimations[0x20];
 };
 
-extern EWRAM_DATA struct SaveData gSaveDataBuffer;
+extern struct SaveData gSaveDataBuffer;
 
 extern const char gSaveVersion[0x30];
 

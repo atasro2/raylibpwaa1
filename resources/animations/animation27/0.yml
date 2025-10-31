@@ -1,0 +1,28 @@
+sheet: 1B254
+frames:
+- duration: 1
+  Sprites:
+  - part: 0
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+- duration: 255
+  Sprites:
+  - part: 0
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+    x: 96
+    y: 40
+    x: 96
+    y: 40

@@ -77,6 +77,7 @@ void CourtInit(struct Main * main)
     DmaCopy16(3, &gPalInvestigationExamineCursors[0], OBJ_PLTT+0x100, 0x20);
     DmaCopy16(3, gGfx4bppTrialLife, OBJ_VRAM0 + 0x3780, 0x80);
     DmaCopy16(3, gPalCrossExaminationUI, OBJ_PLTT+0x60, 0x20);
+    //! what the fuck
     DecompressBackgroundIntoBuffer(1);
     CopyBGDataToVram(1);
     CopyBGDataToVram(0xFF);
@@ -111,8 +112,8 @@ void CourtMain(struct Main * main)
     gScriptContext.flags & (SCRIPT_FULLSCREEN | 1))
     {
         PauseBGM();
-        DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-        DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+        memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+        memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
         PlaySE(SE007_MENU_OPEN_SUBMENU);
         main->gameStateFlags &= ~1;
         BACKUP_PROCESS_PTR(main);
@@ -136,7 +137,7 @@ void CourtMain(struct Main * main)
 
 void CourtExit(struct Main * main)
 {
-    DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+    memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
     SET_PROCESS_PTR(SAVE_GAME_PROCESS, 0, 0, 1, main);
     if(main->scenarioIdx == 1)
     {
@@ -250,8 +251,8 @@ void TestimonyMain(struct Main * main)
     gScriptContext.flags & (SCRIPT_FULLSCREEN | 1))
     {
         PauseBGM();
-        DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-        DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+        memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+        memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
         PlaySE(SE007_MENU_OPEN_SUBMENU);
         main->gameStateFlags &= ~1;
         BACKUP_PROCESS_PTR(main);
@@ -368,8 +369,8 @@ void QuestioningInit(struct Main * main)
     DmaCopy16(3, gPalCrossExaminationUI, OBJ_PLTT+0x60, 0x20);
     DmaCopy16(3, gGfxTrialPressPresentButtons, OBJ_VRAM0+0x3000, 0x400);
     DmaCopy16(3, gPalTrialPressPresentButtons, OBJ_PLTT+0xA0, 0x20);
-    DmaCopy16(3, gGfx4bppTestimonyArrows, 0x1A0, 0x80); // ! WHAT, HOW
-    DmaCopy16(3, gGfx4bppTestimonyArrows + 12 * TILE_SIZE_4BPP, 0x220, 0x80); // ! WHAT, HOW
+    //DmaCopy16(3, gGfx4bppTestimonyArrows, 0x1A0, 0x80); // ! WHAT, HOW
+    //DmaCopy16(3, gGfx4bppTestimonyArrows + 12 * TILE_SIZE_4BPP, 0x220, 0x80); // ! WHAT, HOW
     main->testimonyBeginningSection = gScriptContext.currentSection;
     gCourtRecord.recordArrowCounter = 0;
     gCourtRecord.recordArrowFrame++;
@@ -391,8 +392,8 @@ void QuestioningMain(struct Main * main)
         if(!(main->gameStateFlags & 0x10) && gScriptContext.flags & (SCRIPT_LOOP | SCRIPT_FULLSCREEN | 1))
         {
             PauseBGM();
-            DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-            DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+            memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+            memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
             PlaySE(SE007_MENU_OPEN_SUBMENU);
             main->gameStateFlags &= ~1;
             BACKUP_PROCESS_PTR(main);

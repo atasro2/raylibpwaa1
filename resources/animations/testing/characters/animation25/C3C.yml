@@ -1,0 +1,109 @@
+sheet: sheet-5DC4
+arrangements:
+  '24':
+    pal_mode: 1
+    sprites:
+    - part: 52
+      x: 48
+      y: -16
+      palette: 0
+    - part: 53
+      x: 64
+      y: 48
+      palette: 0
+    - part: 54
+      x: 72
+      y: -32
+      palette: 0
+    - part: 55
+      x: 56
+      y: -32
+      palette: 0
+    - part: 56
+      x: 48
+      y: -32
+      palette: 0
+    - part: 57
+      x: 48
+      y: 48
+      palette: 0
+    - part: 58
+      x: 0
+      y: 24
+      palette: 0
+    - part: 59
+      x: 32
+      y: 24
+      palette: 0
+    - part: 60
+      x: 0
+      y: 56
+      palette: 0
+    - part: 61
+      x: 32
+      y: 56
+      palette: 0
+    - part: 62
+      x: 64
+      y: 56
+      palette: 0
+    - part: 63
+      x: 16
+      y: -40
+      palette: 0
+    - part: 64
+      x: 0
+      y: 8
+      palette: 0
+    - part: 70
+      x: 16
+      y: -80
+      palette: 0
+    - part: 71
+      x: 24
+      y: -56
+      palette: 0
+    - part: 78
+      x: -32
+      y: -40
+      palette: 0
+    - part: 79
+      x: -16
+      y: -48
+      palette: 0
+    - part: 80
+      x: -24
+      y: -48
+      palette: 0
+    - part: 81
+      x: -24
+      y: -64
+      palette: 0
+    - part: 82
+      x: -24
+      y: -72
+      palette: 0
+    - part: 76
+      x: -16
+      y: 0
+      palette: 0
+    - part: 83
+      x: -16
+      y: -32
+      palette: 0
+  '116':
+    pal_mode: 1
+    sprites:
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

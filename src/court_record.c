@@ -18,554 +18,556 @@
 #include "constants/process.h"
 #include "constants/oam_allocations.h"
 
+#include "sprites.h"
+
 struct EvidenceProfileData
 {
-    /* +0x00 */ u8 * descriptionTiles;
+    /* +0x00 */ char * descriptionTiles;
     /* +0x04 */ u16 evidenceImageId;
     /* +0x06 */ u16 evidenceDetailId;
 };
 
 const struct EvidenceProfileData gEvidenceProfileData[] = {
-	{
-		.descriptionTiles = gGfxProfilesMiaFey0_description,
-		.evidenceImageId = 18,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMayaFey0_description,
-		.evidenceImageId = 23,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesLarryButz0_description,
-		.evidenceImageId = 19,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesCindyStone_description,
-		.evidenceImageId = 20,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesFrankSahwit_description,
-		.evidenceImageId = 21,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesWinstonPayne_description,
-		.evidenceImageId = 22,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport0_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceTheThinker0_description,
-		.evidenceImageId = 14,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceCindyStonesPassport_description,
-		.evidenceImageId = 15,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAffidavit0_description,
-		.evidenceImageId = 17,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMiaFey1_description,
-		.evidenceImageId = 18,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMayaFey1_description,
-		.evidenceImageId = 23,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMayaFey2_description,
-		.evidenceImageId = 23,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMayaFey3_description,
-		.evidenceImageId = 23,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMilesEdgeworth0_description,
-		.evidenceImageId = 30,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesDickGumshoe_description,
-		.evidenceImageId = 10,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesAprilMay0_description,
-		.evidenceImageId = 11,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesAprilMay1_description,
-		.evidenceImageId = 11,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesAprilMay2_description,
-		.evidenceImageId = 11,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesReddWhite0_description,
-		.evidenceImageId = 13,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesBellboy0_description,
-		.evidenceImageId = 12,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesBellboy1_description,
-		.evidenceImageId = 12,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMarvinGrossberg_description,
-		.evidenceImageId = 29,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidencePhoenixBadge_description,
-		.evidenceImageId = 6,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport1_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericLetter0_description,
-		.evidenceImageId = 7,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceMayasCellphone_description,
-		.evidenceImageId = 3,
-		.evidenceDetailId = 2,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGlassShards_description,
-		.evidenceImageId = 26,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceTheThinker1_description,
-		.evidenceImageId = 14,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceTheThinker2_description,
-		.evidenceImageId = 14,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceMayaMemo_description,
-		.evidenceImageId = 24,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceNoteFromTheSafe_description,
-		.evidenceImageId = 8,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceWiretap_description,
-		.evidenceImageId = 2,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAffidavit1_description,
-		.evidenceImageId = 17,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMistyFey0_description,
-		.evidenceImageId = 28,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesReddWhite1_description,
-		.evidenceImageId = 13,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericNewspaperClipping_description,
-		.evidenceImageId = 27,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto0_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 1,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAffidavit2_description,
-		.evidenceImageId = 17,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport2_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericLetter1_description,
-		.evidenceImageId = 7,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceLottasCamera0_description,
-		.evidenceImageId = 1,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesWillPowers_description,
-		.evidenceImageId = 43,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesWendyOldbag_description,
-		.evidenceImageId = 48,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesJackHammer_description,
-		.evidenceImageId = 47,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesPennyNichols_description,
-		.evidenceImageId = 45,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesSalManella_description,
-		.evidenceImageId = 46,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesDeeVasquez_description,
-		.evidenceImageId = 44,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesCodyHackins_description,
-		.evidenceImageId = 42,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAffidavit3_description,
-		.evidenceImageId = 17,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport3_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGlobalStudiosCardKey_description,
-		.evidenceImageId = 37,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto1_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto2_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 3,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto3_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 4,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceSteelSamuraiSpear0_description,
-		.evidenceImageId = 25,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceSteelSamuraiSpear1_description,
-		.evidenceImageId = 25,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceEmptyBottle0_description,
-		.evidenceImageId = 33,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceKeyToCottage_description,
-		.evidenceImageId = 38,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericLetter2_description,
-		.evidenceImageId = 7,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceSteelSamuraiScript_description,
-		.evidenceImageId = 34,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceMrMonkey_description,
-		.evidenceImageId = 39,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceSteelSamuraiCards_description,
-		.evidenceImageId = 31,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceSteelSamuraiUltraRareCard_description,
-		.evidenceImageId = 32,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceCodysSteelSamuraiScrapbook_description,
-		.evidenceImageId = 40,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceCodysDigitalCamera_description,
-		.evidenceImageId = 35,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidencePlateWithSteakBones_description,
-		.evidenceImageId = 36,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceEmptyBottle1_description,
-		.evidenceImageId = 33,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto4_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 5,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGlobalStudiosVan_description,
-		.evidenceImageId = 41,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceEmptyPlate_description,
-		.evidenceImageId = 0,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMilesEdgeworth1_description,
-		.evidenceImageId = 30,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesLottaHart0_description,
-		.evidenceImageId = 58,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesLottaHart1_description,
-		.evidenceImageId = 58,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesLarryButz1_description,
-		.evidenceImageId = 19,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesRobertHammond_description,
-		.evidenceImageId = 61,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMistyFey1_description,
-		.evidenceImageId = 28,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesManfredVonKarma_description,
-		.evidenceImageId = 59,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesGregoryEdgeworth_description,
-		.evidenceImageId = 60,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesOldMan0_description,
-		.evidenceImageId = 62,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesOldMan1_description,
-		.evidenceImageId = 62,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceFirecrackers_description,
-		.evidenceImageId = 49,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport4_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport5_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport6_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceLottasCamera1_description,
-		.evidenceImageId = 1,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto5_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 6,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto6_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 7,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto7_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxProfilesMistyFey2_description,
-		.evidenceImageId = 28,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceArticleGourdy_description,
-		.evidenceImageId = 4,
-		.evidenceDetailId = 11,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAffidavit4_description,
-		.evidenceImageId = 17,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto8_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 8,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceBullet0_description,
-		.evidenceImageId = 5,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceBullet1_description,
-		.evidenceImageId = 5,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidencePistol_description,
-		.evidenceImageId = 50,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAffidavit5_description,
-		.evidenceImageId = 17,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceAirTube_description,
-		.evidenceImageId = 51,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceMissile_description,
-		.evidenceImageId = 53,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceFishingPole_description,
-		.evidenceImageId = 56,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceMetalDetector_description,
-		.evidenceImageId = 52,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidencePolly_description,
-		.evidenceImageId = 57,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceYannisSafe_description,
-		.evidenceImageId = 63,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericAutopsyReport7_description,
-		.evidenceImageId = 16,
-		.evidenceDetailId = 9,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericPhoto9_description,
-		.evidenceImageId = 9,
-		.evidenceDetailId = 10,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceGenericLetter3_description,
-		.evidenceImageId = 7,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceDl6Bullet_description,
-		.evidenceImageId = 55,
-		.evidenceDetailId = 0,
-	},
-	{
-		.descriptionTiles = gGfxEvidenceMissileAngry_description,
-		.evidenceImageId = 54,
-		.evidenceDetailId = 0,
-	},
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/mia_fey_0.png",
+            .evidenceImageId = 18,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/maya_fey_0.png",
+            .evidenceImageId = 23,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/larry_butz_0.png",
+            .evidenceImageId = 19,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/cindy_stone.png",
+            .evidenceImageId = 20,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/frank_sahwit.png",
+            .evidenceImageId = 21,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/winston_payne.png",
+            .evidenceImageId = 22,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_0.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/the_thinker_0.png",
+            .evidenceImageId = 14,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/cindy_stones_passport.png",
+            .evidenceImageId = 15,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_affidavit_0.png",
+            .evidenceImageId = 17,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/mia_fey_1.png",
+            .evidenceImageId = 18,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/maya_fey_1.png",
+            .evidenceImageId = 23,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/maya_fey_2.png",
+            .evidenceImageId = 23,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/maya_fey_3.png",
+            .evidenceImageId = 23,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/miles_edgeworth_0.png",
+            .evidenceImageId = 30,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/dick_gumshoe.png",
+            .evidenceImageId = 10,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/april_may_0.png",
+            .evidenceImageId = 11,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/april_may_1.png",
+            .evidenceImageId = 11,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/april_may_2.png",
+            .evidenceImageId = 11,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/redd_white_0.png",
+            .evidenceImageId = 13,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/bellboy_0.png",
+            .evidenceImageId = 12,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/bellboy_1.png",
+            .evidenceImageId = 12,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/marvin_grossberg.png",
+            .evidenceImageId = 29,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/phoenix_badge.png",
+            .evidenceImageId = 6,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_1.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_letter_0.png",
+            .evidenceImageId = 7,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/mayas_cellphone.png",
+            .evidenceImageId = 3,
+            .evidenceDetailId = 2,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/glass_shards.png",
+            .evidenceImageId = 26,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/the_thinker_1.png",
+            .evidenceImageId = 14,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/the_thinker_2.png",
+            .evidenceImageId = 14,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/maya_memo.png",
+            .evidenceImageId = 24,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/note_from_the_safe.png",
+            .evidenceImageId = 8,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/wiretap.png",
+            .evidenceImageId = 2,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_affidavit_1.png",
+            .evidenceImageId = 17,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/misty_fey_0.png",
+            .evidenceImageId = 28,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/redd_white_1.png",
+            .evidenceImageId = 13,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_newspaper_clipping.png",
+            .evidenceImageId = 27,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_0.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 1,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_affidavit_2.png",
+            .evidenceImageId = 17,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_2.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_letter_1.png",
+            .evidenceImageId = 7,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/lottas_camera_0.png",
+            .evidenceImageId = 1,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/will_powers.png",
+            .evidenceImageId = 43,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/wendy_oldbag.png",
+            .evidenceImageId = 48,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/jack_hammer.png",
+            .evidenceImageId = 47,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/penny_nichols.png",
+            .evidenceImageId = 45,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/sal_manella.png",
+            .evidenceImageId = 46,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/dee_vasquez.png",
+            .evidenceImageId = 44,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/cody_hackins.png",
+            .evidenceImageId = 42,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_affidavit_3.png",
+            .evidenceImageId = 17,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_3.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/global_studios_card_key.png",
+            .evidenceImageId = 37,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_1.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_2.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 3,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_3.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 4,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/steel_samurai_spear_0.png",
+            .evidenceImageId = 25,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/steel_samurai_spear_1.png",
+            .evidenceImageId = 25,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/empty_bottle_0.png",
+            .evidenceImageId = 33,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/key_to_cottage.png",
+            .evidenceImageId = 38,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_letter_2.png",
+            .evidenceImageId = 7,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/steel_samurai_script.png",
+            .evidenceImageId = 34,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/mr_monkey.png",
+            .evidenceImageId = 39,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/steel_samurai_cards.png",
+            .evidenceImageId = 31,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/steel_samurai_ultra_rare_card.png",
+            .evidenceImageId = 32,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/codys_steel_samurai_scrapbook.png",
+            .evidenceImageId = 40,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/codys_digital_camera.png",
+            .evidenceImageId = 35,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/plate_with_steak_bones.png",
+            .evidenceImageId = 36,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/empty_bottle_1.png",
+            .evidenceImageId = 33,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_4.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 5,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/global_studios_van.png",
+            .evidenceImageId = 41,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/empty_plate.png",
+            .evidenceImageId = 0,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/miles_edgeworth_1.png",
+            .evidenceImageId = 30,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/lotta_hart_0.png",
+            .evidenceImageId = 58,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/lotta_hart_1.png",
+            .evidenceImageId = 58,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/larry_butz_1.png",
+            .evidenceImageId = 19,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/robert_hammond.png",
+            .evidenceImageId = 61,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/misty_fey_1.png",
+            .evidenceImageId = 28,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/manfred_von_karma.png",
+            .evidenceImageId = 59,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/gregory_edgeworth.png",
+            .evidenceImageId = 60,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/old_man_0.png",
+            .evidenceImageId = 62,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/old_man_1.png",
+            .evidenceImageId = 62,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/firecrackers.png",
+            .evidenceImageId = 49,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_4.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_5.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_6.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/lottas_camera_1.png",
+            .evidenceImageId = 1,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_5.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 6,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_6.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 7,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_7.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/profiles/misty_fey_2.png",
+            .evidenceImageId = 28,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/article_gourdy.png",
+            .evidenceImageId = 4,
+            .evidenceDetailId = 11,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_affidavit_4.png",
+            .evidenceImageId = 17,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_8.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 8,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/bullet_0.png",
+            .evidenceImageId = 5,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/bullet_1.png",
+            .evidenceImageId = 5,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/pistol.png",
+            .evidenceImageId = 50,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_affidavit_5.png",
+            .evidenceImageId = 17,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/air_tube.png",
+            .evidenceImageId = 51,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/missile.png",
+            .evidenceImageId = 53,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/fishing_pole.png",
+            .evidenceImageId = 56,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/metal_detector.png",
+            .evidenceImageId = 52,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/polly.png",
+            .evidenceImageId = 57,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/yannis_safe.png",
+            .evidenceImageId = 63,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_autopsy_report_7.png",
+            .evidenceImageId = 16,
+            .evidenceDetailId = 9,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_photo_9.png",
+            .evidenceImageId = 9,
+            .evidenceDetailId = 10,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/generic_letter_3.png",
+            .evidenceImageId = 7,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/dl-6_bullet.png",
+            .evidenceImageId = 55,
+            .evidenceDetailId = 0,
+    },
+    {
+    .descriptionTiles = "evidence_profile_descriptions/evidence/missile_angry.png",
+            .evidenceImageId = 54,
+            .evidenceDetailId = 0,
+    },
 };
 
 const u8 sCourtRecordLeftArrowTileIndexes[] = {0, 4, 8, 4};
@@ -587,6 +589,8 @@ void (*gEvidenceAddedProcessStates[3])(struct Main *, struct CourtRecord *) = {
 	EvidenceAddedMain,
 	EvidenceAddedExit
 };
+
+static void UnloadEvidenceGraphics(void);
 
 void InitializeCourtRecordForScenario(struct Main * main, struct CourtRecord * courtRecord) // Status_init
 {
@@ -904,6 +908,7 @@ void CourtRecordExit(struct Main * main, struct CourtRecord * courtRecord) // st
     UpdateRecordSprites(courtRecord);
     if(courtRecord->windowScrollSpeed == 0)
     {
+        UnloadEvidenceGraphics();
         courtRecord->flags |= 4;
         courtRecord->flags &= ~2;
         if(main->process[GAME_PROCESS_VAR2] == 0 && !(gScriptContext.flags & SCRIPT_FULLSCREEN))
@@ -993,7 +998,7 @@ void CourtRecordDetailSubMenu(struct Main * main, struct CourtRecord * courtReco
                 break;
             courtRecord->fullScreenPage = 0;
             evidenceId = courtRecord->displayItemList[courtRecord->selectedItem];
-            DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(struct Main));
+            memcpy(&gSaveDataBuffer.main, &gMain, sizeof(struct Main));
             switch(gEvidenceProfileData[evidenceId].evidenceDetailId)
             {
                 case 0:
@@ -1035,8 +1040,8 @@ void CourtRecordDetailSubMenu(struct Main * main, struct CourtRecord * courtReco
                     break;
             }
             DecompressBackgroundIntoBuffer(main->currentBG);
-            DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-            DmaCopy16(3, gMapMarker, gSaveDataBuffer.mapMarker, sizeof(gMapMarker));
+            memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+            memcpy(gSaveDataBuffer.mapMarker, gMapMarker, sizeof(gMapMarker));
             for(i = 0; i < 8; i++)
                 gMapMarker[i].id |= 0xFF;
             if(main->processCopy[GAME_PROCESS] == INVESTIGATION_PROCESS)
@@ -1141,8 +1146,8 @@ void CourtRecordDetailSubMenu(struct Main * main, struct CourtRecord * courtReco
             main->showTextboxCharacters = gSaveDataBuffer.main.showTextboxCharacters;
             gIORegisters.lcd_dispcnt |= DISPCNT_BG1_ON;
             gIORegisters.lcd_dispcnt |= DISPCNT_BG2_ON;
-            DmaCopy16(3, gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
-            DmaCopy16(3, gSaveDataBuffer.mapMarker, gMapMarker, sizeof(gMapMarker));
+            memcpy(gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
+            memcpy(gMapMarker, gSaveDataBuffer.mapMarker, sizeof(gMapMarker));
             MakeMapMarkerSprites();
             if(main->processCopy[GAME_PROCESS] == TESTIMONY_PROCESS)
                 gTestimony.timer = 0;
@@ -1241,9 +1246,9 @@ void CourtRecordTakeThatSpecial(struct Main * main, struct CourtRecord * courtRe
                 evidenceId = courtRecord->displayItemList[courtRecord->selectedItem];
                 offset = gEvidenceProfileData[evidenceId].evidenceImageId * (TILE_SIZE_4BPP * 64 + 0x20);
                 temp = (uintptr_t)gGfxEvidenceProfilePictures + offset; //! Evil, uses a u32 for this pointer keep in mind and also global define
-                DmaCopy16(3, temp, OBJ_PLTT+0x20, 0x20);
+                DmaCopy16(3, (void*)temp, OBJ_PLTT+0x20, 0x20);
                 temp = (uintptr_t)gGfxEvidenceProfilePictures + offset + 0x20;
-                DmaCopy16(3, temp, OBJ_VRAM0+0x1000, TILE_SIZE_4BPP * 64);
+                DmaCopy16(3, (void*)temp, OBJ_VRAM0+0x1000, TILE_SIZE_4BPP * 64);
                 oam->attr0 = SPRITE_ATTR0(16, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE);
                 oam->attr1 = SPRITE_ATTR1_NONAFFINE(88, FALSE, FALSE, 3);
                 oam->attr2 = SPRITE_ATTR2(0x80, 0, 1);
@@ -1382,6 +1387,7 @@ void EvidenceAddedExit(struct Main * main, struct CourtRecord * courtRecord) // 
     UpdateEvidenceSprites(courtRecord);
     if(courtRecord->windowScrollSpeed == 0)
     {
+        UnloadEvidenceGraphics();
         RESTORE_PROCESS_PTR(main);
         if(gMain.process[GAME_PROCESS] == INVESTIGATION_PROCESS)
         {
@@ -1462,60 +1468,121 @@ void UpdateRecordSprites(struct CourtRecord * courtRecord)
     }
 }
 
+const char * gEvidenceProfilePics[] = {
+	"evidence_profile_pictures/evidence/empty_plate.png",
+	"evidence_profile_pictures/evidence/lottas_camera.png",
+	"evidence_profile_pictures/evidence/wiretap.png",
+	"evidence_profile_pictures/evidence/mayas_cellphone.png",
+	"evidence_profile_pictures/evidence/article_gourdy.png",
+	"evidence_profile_pictures/evidence/bullet.png",
+	"evidence_profile_pictures/evidence/phoenix_badge.png",
+	"evidence_profile_pictures/evidence/generic_letter.png",
+	"evidence_profile_pictures/evidence/note_from_the_safe.png",
+	"evidence_profile_pictures/evidence/generic_photo.png",
+	"evidence_profile_pictures/profiles/dick_gumshoe.png",
+	"evidence_profile_pictures/profiles/april_may.png",
+	"evidence_profile_pictures/profiles/bellboy.png",
+	"evidence_profile_pictures/profiles/redd_white.png",
+	"evidence_profile_pictures/evidence/the_thinker.png",
+	"evidence_profile_pictures/evidence/cindy_stones_passport.png",
+	"evidence_profile_pictures/evidence/generic_autopsy_report.png",
+	"evidence_profile_pictures/evidence/generic_affidavit.png",
+	"evidence_profile_pictures/profiles/mia_fey.png",
+	"evidence_profile_pictures/profiles/larry_butz.png",
+	"evidence_profile_pictures/profiles/cindy_stone.png",
+	"evidence_profile_pictures/profiles/frank_sahwit.png",
+	"evidence_profile_pictures/profiles/winston_payne.png",
+	"evidence_profile_pictures/profiles/maya_fey.png",
+	"evidence_profile_pictures/evidence/maya_memo.png",
+	"evidence_profile_pictures/evidence/steel_samurai_spear.png",
+	"evidence_profile_pictures/evidence/glass_shards.png",
+	"evidence_profile_pictures/evidence/generic_newspaper_clipping.png",
+	"evidence_profile_pictures/profiles/misty_fey.png",
+	"evidence_profile_pictures/profiles/marvin_grossberg.png",
+	"evidence_profile_pictures/profiles/miles_edgeworth.png",
+	"evidence_profile_pictures/evidence/steel_samurai_cards.png",
+	"evidence_profile_pictures/evidence/steel_samurai_ultra_rare_card.png",
+	"evidence_profile_pictures/evidence/empty_bottle.png",
+	"evidence_profile_pictures/evidence/steel_samurai_script.png",
+	"evidence_profile_pictures/evidence/codys_digital_camera.png",
+	"evidence_profile_pictures/evidence/plate_with_steak_bones.png",
+	"evidence_profile_pictures/evidence/global_studios_card_key.png",
+	"evidence_profile_pictures/evidence/key_to_cottage.png",
+	"evidence_profile_pictures/evidence/mr_monkey.png",
+	"evidence_profile_pictures/evidence/codys_steel_samurai_scrapbook.png",
+	"evidence_profile_pictures/evidence/global_studios_van.png",
+	"evidence_profile_pictures/profiles/cody_hackins.png",
+	"evidence_profile_pictures/profiles/will_powers.png",
+	"evidence_profile_pictures/profiles/dee_vasquez.png",
+	"evidence_profile_pictures/profiles/penny_nichols.png",
+	"evidence_profile_pictures/profiles/sal_manella.png",
+	"evidence_profile_pictures/profiles/jack_hammer.png",
+	"evidence_profile_pictures/profiles/wendy_oldbag.png",
+	"evidence_profile_pictures/evidence/firecrackers.png",
+	"evidence_profile_pictures/evidence/pistol.png",
+	"evidence_profile_pictures/evidence/air_tube.png",
+	"evidence_profile_pictures/evidence/metal_detector.png",
+	"evidence_profile_pictures/evidence/missile.png",
+	"evidence_profile_pictures/evidence/missile_angry.png",
+	"evidence_profile_pictures/evidence/dl-6_bullet.png",
+	"evidence_profile_pictures/evidence/fishing_pole.png",
+	"evidence_profile_pictures/evidence/polly.png",
+	"evidence_profile_pictures/profiles/lotta_hart.png",
+	"evidence_profile_pictures/profiles/manfred_von_karma.png",
+	"evidence_profile_pictures/profiles/gregory_edgeworth.png",
+	"evidence_profile_pictures/profiles/robert_hammond.png",
+	"evidence_profile_pictures/profiles/old_man.png",
+	"evidence_profile_pictures/evidence/yannis_safe.png"
+};
+
+static void UnloadEvidenceGraphics(void)
+{
+    UnloadSpriteData(OAM_IDX_EVIDENCE_DISPLAY);
+    UnloadSpriteData(OAM_IDX_EVIDENCE_DISPLAY+1);
+}
+
 void LoadEvidenceGraphics(u32 evidenceId)
 {
     u32 offset;
     u8 * src;
 
-    offset = gEvidenceProfileData[evidenceId].evidenceImageId * (TILE_SIZE_4BPP * 64 + 0x20);
-    src = gGfxEvidenceProfilePictures + offset;
-    DmaCopy16(3, src, OBJ_PLTT+0x20, 0x20);
-    src = gGfxEvidenceProfilePictures + offset + 0x20;
-    DmaCopy16(3, src, OBJ_VRAM0+0x5000, TILE_SIZE_4BPP * 64);
-    src = gEvidenceProfileData[evidenceId].descriptionTiles;
-    LZ77UnCompWram(src, eUnknown_0200AFC0);
-    DmaCopy16(3, eUnknown_0200AFC0, (void *)OBJ_VRAM0+0x3C00, TILE_SIZE_4BPP * 160);
+    UnloadEvidenceGraphics(); // unload previous graphics just in case
+
+    gOamObjects[OAM_IDX_EVIDENCE_DISPLAY].texture = LoadTexture(gEvidenceProfilePics[gEvidenceProfileData[evidenceId].evidenceImageId]);
+    gOamObjects[OAM_IDX_EVIDENCE_DISPLAY+1].texture = LoadTexture(gEvidenceProfileData[evidenceId].descriptionTiles);
+    gOamObjects[OAM_IDX_EVIDENCE_DISPLAY+1].width = gOamObjects[OAM_IDX_EVIDENCE_DISPLAY+1].texture.width;
+    gOamObjects[OAM_IDX_EVIDENCE_DISPLAY+1].height = gOamObjects[OAM_IDX_EVIDENCE_DISPLAY+1].texture.height;
 }
+
 
 void UpdateEvidenceSprites(struct CourtRecord * courtRecord)
 {
     struct OamAttrs * oam = &gOamObjects[OAM_IDX_EVIDENCE_DISPLAY];
-    u32 i;
 
     oam->attr0 = SPRITE_ATTR0(24, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE);
     oam->attr1 = SPRITE_ATTR1_NONAFFINE(0, FALSE, FALSE, 3);
     oam->attr1 += courtRecord->windowX;
     oam->attr2 = SPRITE_ATTR2(0x280, 0, 1);
     oam++;
-    for(i = 0; i < 5; i++)
-    {
-        oam->attr0 = SPRITE_ATTR0(24, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE);
-        oam->attr1 = SPRITE_ATTR1_NONAFFINE(72 + i*32, FALSE, FALSE, 2);
-        oam->attr1 += courtRecord->windowX;
-        oam->attr2 = SPRITE_ATTR2(0x1E0 + i*0x10, 0, 2);
-        oam++;
-    }
-    for(i = 0; i < 5; i++)
-    {
-        oam->attr0 = SPRITE_ATTR0(56, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE);
-        oam->attr1 = SPRITE_ATTR1_NONAFFINE(72 + i*32, FALSE, FALSE, 2);
-        oam->attr1 += courtRecord->windowX;
-        oam->attr2 = SPRITE_ATTR2(0x230 + i*0x10, 0, 2);
-        oam++;
-    }
+    oam->attr0 = SPRITE_ATTR0(24, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE);
+    oam->attr1 = SPRITE_ATTR1_NONAFFINE(72, FALSE, FALSE, 2);
+    oam->attr1 += courtRecord->windowX;
+    oam->attr2 = SPRITE_ATTR2(0x1E0, 0, 2);
 }
 
 void ClearEvidenceSprites(struct CourtRecord * courtRecord)
 {
     struct OamAttrs * oam = &gOamObjects[OAM_IDX_EVIDENCE_DISPLAY];
     u32 i;
-    oam->attr0 = SPRITE_ATTR0_CLEAR;
-    oam++;
-    for(i = 0; i < 10; i++)
-    {
-        oam->attr0 = SPRITE_ATTR0_CLEAR;
-        oam++;
-    }
+
+    UnloadEvidenceGraphics(); // daijoubu kai?
+    //oam->attr0 = SPRITE_ATTR0_CLEAR;
+    //oam++;
+    //for(i = 0; i < 10; i++)
+    //{
+    //    oam->attr0 = SPRITE_ATTR0_CLEAR;
+    //    oam++;
+    //}
 }
 
 void UpdateRecordInfoActionSprites(bool32 showSprites)
@@ -1658,11 +1725,11 @@ s32 FindFirstEmptySlotInCourtRecord(u32 isProfile)
 
 void SortCourtRecordAndSyncListCount(struct CourtRecord * courtRecord)
 {
-    u8 * ewram = eUnknown_0200AFC0;
+    u8 ewram[32];
     u32 i;
 
-    DmaCopy16(3, courtRecord->profileList, ewram, 0x20);
-    DmaFill16(3, 0xFFFF, courtRecord->profileList, 0x20);
+    memcpy(ewram, courtRecord->profileList, 0x20);
+    memset(courtRecord->profileList, 0xFFFF, 0x20);
     courtRecord->profileCount = 0;
     for(i = 0; i < 0x20; i++)
     {
@@ -1672,8 +1739,8 @@ void SortCourtRecordAndSyncListCount(struct CourtRecord * courtRecord)
             courtRecord->profileCount++;
         }
     }
-    DmaCopy16(3, courtRecord->evidenceList, ewram, 0x20);
-    DmaFill16(3, 0xFFFF, courtRecord->evidenceList, 0x20);
+    memcpy(ewram, courtRecord->evidenceList, 0x20);
+    memset(courtRecord->evidenceList, 0xFFFF, 0x20);
     courtRecord->evidenceCount = 0;
     for(i = 0; i < 0x20; i++)
     {

@@ -1,0 +1,57 @@
+sheet: sheet-0
+arrangements:
+  '24':
+    pal_mode: 1
+    sprites:
+    - part: 35
+      x: -40
+      y: -8
+      palette: 0
+    - part: 36
+      x: -48
+      y: 32
+      palette: 0
+    - part: 37
+      x: 24
+      y: 24
+      palette: 0
+    - part: 38
+      x: 24
+      y: -8
+      palette: 0
+    - part: 39
+      x: -32
+      y: -40
+      palette: 0
+    - part: 40
+      x: -24
+      y: -56
+      palette: 0
+    - part: 41
+      x: 8
+      y: -56
+      palette: 0
+    - part: 5
+      x: 32
+      y: -40
+      palette: 0
+    - part: 42
+      x: 0
+      y: -72
+      palette: 0
+  '64':
+    pal_mode: 1
+    sprites:
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

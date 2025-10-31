@@ -1,0 +1,47 @@
+sheet: sheet-2212C
+arrangements:
+  '24':
+  - part: 0
+    x: 40
+    y: 72
+    palette: 0
+  - part: 1
+    x: 56
+    y: 72
+    palette: 0
+  - part: 2
+    x: 40
+    y: 104
+    palette: 0
+  - part: 3
+    x: 40
+    y: 112
+    palette: 0
+  - part: 4
+    x: 56
+    y: 88
+    palette: 0
+  - part: 5
+    x: 64
+    y: 96
+    palette: 0
+  - part: 6
+    x: 40
+    y: 120
+    palette: 0
+  '56':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+    id: 79
+    enabled: False
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

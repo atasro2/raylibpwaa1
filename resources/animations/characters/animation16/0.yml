@@ -1,0 +1,157 @@
+sheet: sheet-0
+arrangements:
+  '56':
+  - part: 0
+    x: 80
+    y: 96
+  - part: 1
+    x: 144
+    y: 128
+  - part: 2
+    x: 144
+    y: 96
+  - part: 3
+    x: 80
+    y: 80
+  - part: 4
+    x: 112
+    y: 80
+  - part: 5
+    x: 144
+    y: 80
+  - part: 6
+    x: 104
+    y: 16
+  - part: 7
+    x: 88
+    y: 48
+  - part: 8
+    x: 96
+    y: 16
+  - part: 9
+    x: 136
+    y: 24
+  - part: 10
+    x: 136
+    y: 72
+  - part: 11
+    x: 136
+    y: 56
+  '108':
+  - part: 0
+    x: 80
+    y: 96
+  - part: 1
+    x: 144
+    y: 128
+  - part: 2
+    x: 144
+    y: 96
+  - part: 3
+    x: 80
+    y: 80
+  - part: 4
+    x: 112
+    y: 80
+  - part: 5
+    x: 144
+    y: 80
+  - part: 6
+    x: 104
+    y: 16
+  - part: 7
+    x: 88
+    y: 48
+  - part: 8
+    x: 96
+    y: 16
+  - part: 9
+    x: 136
+    y: 24
+  - part: 10
+    x: 136
+    y: 72
+  - part: 11
+    x: 136
+    y: 56
+  - part: 12
+    x: 104
+    y: 48
+  '164':
+  - part: 0
+    x: 80
+    y: 96
+  - part: 1
+    x: 144
+    y: 128
+  - part: 2
+    x: 144
+    y: 96
+  - part: 3
+    x: 80
+    y: 80
+  - part: 4
+    x: 112
+    y: 80
+  - part: 5
+    x: 144
+    y: 80
+  - part: 6
+    x: 104
+    y: 16
+  - part: 7
+    x: 88
+    y: 48
+  - part: 8
+    x: 96
+    y: 16
+  - part: 9
+    x: 136
+    y: 24
+  - part: 10
+    x: 136
+    y: 72
+  - part: 11
+    x: 136
+    y: 56
+  - part: 13
+    x: 104
+    y: 48
+  '220':
+frames:
+- duration: 20
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 56
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 108
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 164
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 108
+- duration: 100
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 56
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 56

@@ -1,0 +1,19 @@
+gfx: sheet-8AC.png
+alphaencode: true
+parts:
+  - x: 0
+    y: 0
+    w: 32
+    h: 32
+  - x: 32
+    y: 0
+    w: 16
+    h: 32
+  - x: 32
+    y: 32
+    w: 8
+    h: 16
+  - x: 0
+    y: 32
+    w: 32
+    h: 16

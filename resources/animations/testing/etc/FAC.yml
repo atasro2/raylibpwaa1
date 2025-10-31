@@ -1,0 +1,31 @@
+sheet: sheet-246C8
+arrangements:
+  '24':
+  - part: 0
+    x: 40
+    y: 72
+    palette: 0
+  - part: 1
+    x: 56
+    y: 72
+    palette: 0
+  - part: 2
+    x: 40
+    y: 104
+    palette: 0
+  '40':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+    id: 79
+    enabled: False
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

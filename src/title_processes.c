@@ -9,7 +9,7 @@
 #include "constants/songs.h"
 #include "constants/process.h"
 #include "constants/oam_allocations.h"
-
+#include <stdio.h>
 void CapcomLogoProcess(struct Main *main)
 {
     struct IORegisters *ioRegsp = &gIORegisters;
@@ -46,6 +46,7 @@ void CapcomLogoProcess(struct Main *main)
         if (main->blendMode == 0)
         {
             SET_PROCESS_PTR(TITLE_SCREEN_PROCESS, 0, 0, 0, main);
+            printf("gone to titlescreen\n");
         }
         break;
     default:
@@ -66,30 +67,44 @@ void TitleScreenProcess(struct Main *main)
         SET_PROCESS_PTR(TITLE_SCREEN_PROCESS, 1, 0, 0, main);
         break;
     case 1:
-        DmaCopy16(3, gUnusedAsciiCharSet, VRAM + 0x3800, 0x800);
-        DmaCopy16(3, gPalTitleScreen, PLTT, 0x200);
-        LZ77UnCompWram(gGfx8lzTitleScreen, eBGDecompBuffer);
-        DmaCopy16(3, eBGDecompBuffer, BG_CHAR_ADDR(1), 30*20*TILE_SIZE_8BPP);
-        DmaCopy16(3, gPalNewGameContinue, OBJ_PLTT + 0x40, 0xC0);
-        DmaCopy16(3, gGfxNewGameContinue, OBJ_VRAM0 + 0x400, 0x400);
+        LoadBackgroundFromFile("title_screen.png");
+        //DmaCopy16(3, gUnusedAsciiCharSet, VRAM + 0x3800, 0x800);
+        //DmaCopy16(3, gPalTitleScreen, PLTT, 0x200);
+        //LZ77UnCompWram(gGfx8lzTitleScreen, eBGDecompBuffer);
+        //DmaCopy16(3, eBGDecompBuffer, BG_CHAR_ADDR(1), 30*20*TILE_SIZE_8BPP);
+        //DmaCopy16(3, gPalNewGameContinue, OBJ_PLTT + 0x40, 0xC0);
+        //DmaCopy16(3, gGfxNewGameContinue, OBJ_VRAM0 + 0x400, 0x400);
+        struct Texture ngcTex = LoadTexture("ui/new_game_continue.png");
         oam = &gOamObjects[OAM_IDX_TITLE_SCREEN_OPTIONS];
         oam->attr0 = SPRITE_ATTR0(112, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_H_RECTANGLE);
         oam->attr1 = SPRITE_ATTR1_NONAFFINE(88, FALSE, FALSE, 2);
         oam->attr2 = SPRITE_ATTR2(0x20, 1, 2);
+        oam->texture = ngcTex;
+        oam->texU = 0;
+        oam->texV = 0;
         oam++;
         oam->attr0 = SPRITE_ATTR0(112, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_H_RECTANGLE);
         oam->attr1 = SPRITE_ATTR1_NONAFFINE(120, FALSE, FALSE, 2);
         oam->attr2 = SPRITE_ATTR2(0x28, 1, 2);
+        oam->texture = ngcTex;
+        oam->texU = 32;
+        oam->texV = 0;
         oam++;
         if(main->saveContinueFlags & 0xF0)
         {
             oam->attr0 = SPRITE_ATTR0(132, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_H_RECTANGLE);
             oam->attr1 = SPRITE_ATTR1_NONAFFINE(88, FALSE, FALSE, 2);
             oam->attr2 = SPRITE_ATTR2(0x30, 0, 2);
+            oam->texture = ngcTex;
+            oam->texU = 0;
+            oam->texV = 16;
             oam++;
             oam->attr0 = SPRITE_ATTR0(132, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_H_RECTANGLE);
             oam->attr1 = SPRITE_ATTR1_NONAFFINE(120, FALSE, FALSE, 2);
             oam->attr2 = SPRITE_ATTR2(0x38, 0, 2);
+            oam->texture = ngcTex;
+            oam->texU = 32;
+            oam->texV = 16;
         }
         ioRegsp->lcd_dispcnt = DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG0_ON | DISPCNT_BG3_ON | DISPCNT_OBJ_ON;
         gInvestigation.pointerFrameCounter = 0;

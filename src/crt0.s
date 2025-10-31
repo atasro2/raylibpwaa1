@@ -6,7 +6,7 @@ _start:
 rom_header:
 	.include "asm/rom_header.inc"
 _init:
-	mov r0, #0x12
+	mov r0, #0x12 
 	msr cpsr_fc, r0
 	ldr sp, =0x03007F80
 	mov r0, #0x1f

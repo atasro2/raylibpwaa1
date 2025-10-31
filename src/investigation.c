@@ -19,6 +19,8 @@
 #include "constants/process.h"
 #include "constants/oam_allocations.h"
 
+#include <stdio.h>
+
 void UpdateScrollPromptSprite(struct Main *, u32);
 void UpdateInvestigationActionSprites(struct InvestigationStruct *);
 
@@ -50,6 +52,9 @@ void InvestigationProcess(struct Main * main) // Tantei_part
     UpdateInvestigationActionSprites(&gInvestigation);
 }
 
+Texture2D examineCursorTexture;
+Texture2D investigationActionTexture;
+
 void InvestigationInit(struct Main * main, struct InvestigationStruct * investigation) // tantei_init
 {
     struct IORegisters * ioRegs = &gIORegisters;
@@ -67,21 +72,26 @@ void InvestigationInit(struct Main * main, struct InvestigationStruct * investig
     ioRegs->lcd_bg1cnt = BGCNT_PRIORITY(1) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(29) | BGCNT_16COLOR | BGCNT_WRAP | BGCNT_TXT256x256;
     ioRegs->lcd_bg2cnt = BGCNT_PRIORITY(0) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(30) | BGCNT_16COLOR | BGCNT_WRAP | BGCNT_TXT256x256;
     ioRegs->lcd_bg3cnt = BGCNT_PRIORITY(3) | BGCNT_CHARBASE(1) | BGCNT_SCREENBASE(31) | BGCNT_MOSAIC | BGCNT_256COLOR | BGCNT_WRAP | BGCNT_TXT256x256;
-    DmaCopy16(3, gUnusedAsciiCharSet, VRAM + 0x3800, 0x800);
-    DmaCopy16(3, gGfxSaveGameTiles, VRAM, 0x1000);
-    DmaCopy16(3, gGfx4bppInvestigationActions, OBJ_VRAM0 + 0x2000, 0x1000);
-    DmaCopy16(3, gPalActionButtons, OBJ_PLTT+0xA0, 0x40);
-    DmaCopy16(3, gGfx4bppInvestigationScrollButton, OBJ_VRAM0 + 0x3000, 0x200);
-    DmaCopy16(3, gPalInvestigationScrollPrompt, OBJ_PLTT+0xE0, 0x20);
-    DmaCopy16(3, gGfxInvestigationExamineCursor, OBJ_VRAM0 + 0x3200, 0x200);
-    DmaCopy16(3, gPalInvestigationExamineCursors, OBJ_PLTT+0x100, 0x20);
+    //DmaCopy16(3, gUnusedAsciiCharSet, VRAM + 0x3800, 0x800);
+    //DmaCopy16(3, gGfxSaveGameTiles, VRAM, 0x1000);
+    //DmaCopy16(3, gGfx4bppInvestigationActions, OBJ_VRAM0 + 0x2000, 0x1000);
+    //DmaCopy16(3, gPalActionButtons, OBJ_PLTT+0xA0, 0x40);
+    //DmaCopy16(3, gGfx4bppInvestigationScrollButton, OBJ_VRAM0 + 0x3000, 0x200);
+    //DmaCopy16(3, gPalInvestigationScrollPrompt, OBJ_PLTT+0xE0, 0x20);
+    //DmaCopy16(3, gGfxInvestigationExamineCursor, OBJ_VRAM0 + 0x3200, 0x200);
+    //DmaCopy16(3, gPalInvestigationExamineCursors, OBJ_PLTT+0x100, 0x20);
+    investigationActionTexture = LoadTexture("ui/investigation/action_buttons.png");
+    examineCursorTexture = LoadTexture("ui/investigation/examine_cursor.png");
     DmaCopy16(3, gPalChoiceSelected, OBJ_PLTT+0x120, 0x40);
     oam = &gOamObjects[OAM_IDX_INVESTIGATION_ACTIONS];
     for(i = 0; i < OAM_COUNT_INVESTIGATION_ACTIONS; i++)
     {
         oam->attr0 = SPRITE_ATTR0(-32 & 0xFF, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_H_RECTANGLE);
         oam->attr1 = SPRITE_ATTR1_NONAFFINE(i*60, FALSE, FALSE, 3);
-        oam->attr2 = SPRITE_ATTR2(0x100 + i*0x20, 0, 5);
+        oam->attr2 = SPRITE_ATTR2(0x100 + i*32, 0, 5);
+        oam->texture = investigationActionTexture;
+        oam->texU = 0;
+        oam->texV = i*32;
         oam++;
     }
     SetInactiveActionButtons(investigation, 0xF);
@@ -187,8 +197,8 @@ void InvestigationMain(struct Main * main, struct InvestigationStruct * investig
         {
             s:
             PauseBGM();
-            DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-            DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+            memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+            memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
             PlaySE(SE007_MENU_OPEN_SUBMENU);
             main->gameStateFlags &= ~1;
             BACKUP_PROCESS_PTR(main);
@@ -243,6 +253,7 @@ void InvestigationMain(struct Main * main, struct InvestigationStruct * investig
         if(investigation->selectedAction == 0)
         {
             StartAnimationBlend(0xC, 1);
+            // TODO: reset entire pointer state 
             investigation->pointerColorCounter = 0;
             investigation->pointerColor = 0;
             DmaCopy16(3, gPalInvestigationExamineCursors, OBJ_PLTT+0x100, 0x20);
@@ -285,7 +296,7 @@ void InvestigationMain(struct Main * main, struct InvestigationStruct * investig
 // ! same as CourtExit, thanks capcom
 void InvestigationExit(struct Main * main, struct InvestigationStruct * investigation) // tantei_exit
 {
-    DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+    memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
     SET_PROCESS_PTR(SAVE_GAME_PROCESS, 0, 0, 1, main);
     if(main->scenarioIdx == 1)
     {
@@ -386,6 +397,7 @@ void InvestigationRoomInit(struct Main * main, struct InvestigationStruct * inve
     investigation->selectedAction = 0;
     investigation->lastAction = 0;
     investigation->actionState = 1;
+    
     ClearAllAnimationSprites();
     //TODO: MACROS BITCH!!! these exact 3 lines exist elsewhere in the code so this is 100% a macro in the original code considering it doesn't use the investigation struct ptr 
     DestroyAnimation(&gAnimation[1]);
@@ -428,11 +440,17 @@ void InvestigationInspect(struct Main * main, struct InvestigationStruct * inves
             default:
                 break;
             case 0:
-                if(investigation->selectedActionYOffset <= 0xF)
+                if(investigation->selectedActionYOffset < 16)
                     investigation->selectedActionYOffset++;
                 investigation->lastActionYOffset = 0;
-                if (investigation->selectedActionYOffset > 0xF)
+                if (investigation->selectedActionYOffset >= 16) {
+                    //CORAL BEGIN
+                    oam->texture = examineCursorTexture;
+                    oam->texU = 0;
+                    oam->texV = 0;
+                    //CORAL END
                     main->process[GAME_PROCESS_VAR1]++;
+                }
                 break;
             case 1:
                 temp = 3;
@@ -441,8 +459,8 @@ void InvestigationInspect(struct Main * main, struct InvestigationStruct * inves
                 {
                     s:
                     PauseBGM();
-                    DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-                    DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+                    memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+                    memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
                     PlaySE(SE007_MENU_OPEN_SUBMENU);
                     main->gameStateFlags &= ~1;
                     BACKUP_PROCESS_PTR(main);
@@ -536,12 +554,18 @@ void InvestigationInspect(struct Main * main, struct InvestigationStruct * inves
                         investigation->pointerFrame &= 0xF;
                     }
                 }
+                printf("found section %d\n", temp);
                 oam->attr0 = SPRITE_ATTR0(investigation->pointerY, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, ST_OAM_SQUARE);
                 if(investigation->pointerX < 120)
                     oam->attr1 = SPRITE_ATTR1_NONAFFINE(investigation->pointerX, TRUE, FALSE, 1);
                 else
                     oam->attr1 = SPRITE_ATTR1_NONAFFINE(investigation->pointerX, FALSE, FALSE, 1);
-                oam->attr2 = SPRITE_ATTR2(0x190+investigation->pointerFrame, 0, 8);
+                
+                //CORAL BEGIN
+                //oam->attr2 = SPRITE_ATTR2(0x190+investigation->pointerFrame, 0, 8);
+                oam->texV = investigation->pointerFrame * 4;
+                //CORAL END
+                
                 investigation->pointerColorCounter++;
                 if(investigation->pointerColorCounter > 1)
                 {
@@ -601,7 +625,7 @@ void InvestigationMove(struct Main * main, struct InvestigationStruct * investig
                     investigation->activeOptions[i] = TRUE;
                     temp = (*moveLocations)*0x800;
                     temp += (u32)gGfxLocationChoices;
-                    DmaCopy16(3, temp, vram, 0x800);
+                    DmaCopy16(3, (void*)temp,(void*)vram,0x800);
                     for(j = 0; j < 2; j++)
                     {
                         u32 baseTile = 0x1A0;
@@ -660,8 +684,8 @@ void InvestigationMove(struct Main * main, struct InvestigationStruct * investig
                 if(!(main->gameStateFlags & 0x10))
                 {
                     PauseBGM();
-                    DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-                    DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+                    memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+                    memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
                     PlaySE(SE007_MENU_OPEN_SUBMENU);
                     main->gameStateFlags &= ~1;
                     BACKUP_PROCESS_PTR(main);
@@ -810,7 +834,7 @@ void InvestigationMove(struct Main * main, struct InvestigationStruct * investig
                     investigation->activeOptions[i] = TRUE;
                     temp = *moveLocations*0x800; //TODO: label vs value?
                     temp += (u32)gGfxLocationChoices;
-                    DmaCopy16(3, temp, vram, 0x800);
+                    DmaCopy16(3, (void*)temp,(void*)vram,0x800);
                     for(j = 0; j < 2; j++)
                     {
                         u32 baseTile = 0x1A0;
@@ -894,7 +918,7 @@ void InvestigationTalk(struct Main * main, struct InvestigationStruct * investig
                     investigation->activeOptions[i] = TRUE;
                     temp = (*icons) * 0x800;
                     temp += (uintptr_t)gGfxTalkChoices;
-                    DmaCopy16(3, temp, vram, 0x800);
+                    DmaCopy16(3, (void*)temp,(void*)vram,0x800);
                     for(j = 0; j < 2; j++)
                     {
                         u32 baseTile = 0x1A0;
@@ -969,8 +993,8 @@ void InvestigationTalk(struct Main * main, struct InvestigationStruct * investig
                     if(!(main->gameStateFlags & 0x10))
                     {
                         PauseBGM();
-                        DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-                        DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+                        memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+                        memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
                         PlaySE(SE007_MENU_OPEN_SUBMENU);
                         main->gameStateFlags &= ~1;
                         BACKUP_PROCESS_PTR(main);
@@ -1152,8 +1176,8 @@ void InvestigationTalk(struct Main * main, struct InvestigationStruct * investig
                     if(gScriptContext.flags & (SCRIPT_FULLSCREEN | 1))
                     {
                         PauseBGM();
-                        DmaCopy16(3, gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
-                        DmaCopy16(3, &gMain, &gSaveDataBuffer.main, sizeof(gMain));
+                        memcpy(gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+                        memcpy(&gSaveDataBuffer.main, &gMain, sizeof(gMain));
                         PlaySE(SE007_MENU_OPEN_SUBMENU);
                         main->gameStateFlags &= ~1;
                         BACKUP_PROCESS_PTR(main);
@@ -1210,7 +1234,7 @@ void InvestigationTalk(struct Main * main, struct InvestigationStruct * investig
                         investigation->activeOptions[i] = TRUE;
                         temp = (*icons) * 0x800;
                         temp += (uintptr_t)gGfxTalkChoices;
-                        DmaCopy16(3, temp, vram, 0x800);
+                        DmaCopy16(3, (void*)temp,(void*)vram,0x800);
                         for(j = 0; j < 2; j++)
                         {
                             u32 baseTile = 0x1A0;
@@ -1278,7 +1302,7 @@ void InvestigationTalk(struct Main * main, struct InvestigationStruct * investig
                     investigation->activeOptions[i] = TRUE;
                     temp = (*icons) * 0x800;
                     temp += (uintptr_t)gGfxTalkChoices;
-                    DmaCopy16(3, temp, vram, 0x800);
+                    DmaCopy16(3, (void*)temp,(void*)vram,0x800);
                     for(j = 0; j < 2; j++)
                     {
                         u32 baseTile = 0x1A0;
@@ -1513,7 +1537,8 @@ u32 GetExaminedAreaSection(struct InvestigationStruct * investigation) // finger
     rect.h = 16;
     if(GetFlag(0, 0x41) == FALSE)
         return 0x19;
-    animId = CheckRectCollisionWithAnim(&rect);
+    //animId = CheckRectCollisionWithAnim(&rect);
+    animId = 0x10000; // No
     for(examData = gExaminationData; examData->type != 0xFF; examData++) // Check for collision with animation
     {
         if(examData->type == 0xFE && animId == examData->animId)

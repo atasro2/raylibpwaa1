@@ -23,9 +23,9 @@ void EpisodeLoadGfx(struct Main * main)
     struct OamAttrs * oam;
     u32 i, j;
 
-    LZ77UnCompWram(gGfx4lzEpisodeSelectOptions, eBGDecompBuffer);
-    DmaCopy16(3, eBGDecompBuffer, OBJ_VRAM0+0x3400, 0x2800);
-    DmaCopy16(3, gPalChoiceSelected, OBJ_PLTT+0x120, 0x40);
+    //LZ77UnCompWram(gGfx4lzEpisodeSelectOptions, eBGDecompBuffer);
+    //DmaCopy16(3, eBGDecompBuffer, OBJ_VRAM0+0x3400, 0x2800);
+    //DmaCopy16(3, gPalChoiceSelected, OBJ_PLTT+0x120, 0x40);
     DmaCopy16(3, gGfxSaveGameTiles, VRAM, 0x1000);
     DecompressBackgroundIntoBuffer(0x43);
     CopyBGDataToVram(0x43);
@@ -37,15 +37,22 @@ void EpisodeLoadGfx(struct Main * main)
     main->tilemapUpdateBits = 0xA;
     SetTextboxSize(2);
     oam = &gOamObjects[OAM_IDX_GENERIC_TEXT_ICON];
+    struct Texture choicesTex = LoadTexture("episode_select_options.png");
     for(i = 0; i < 4; i++)
     {
         for(j = 0; j < 2; j++)
         {
             oam->attr0 = SPRITE_ATTR0(i*32, ST_OAM_AFFINE_OFF, ST_OAM_OBJ_NORMAL, FALSE, ST_OAM_4BPP, 1);
-            if((main->caseEnabledFlags >> i) & 1)
-                oam->attr2 = SPRITE_ATTR2(0x1E0, 0, 9) + j*0x20 + i*0x40; // increases tileNum outside macro ajfjshdfjshdf
-            else
-                oam->attr2 = SPRITE_ATTR2(0x1A0, 0, 9) + j*0x20; 
+            if((main->caseEnabledFlags >> i) & 1) {
+                oam->texU = j * 64;
+                oam->texV = (i+1) * 32;
+                oam->attr2 = SPRITE_ATTR2(0x1E0, 0, 9) +  + i*0x40; // increases tileNum outside macro ajfjshdfjshdf
+            }
+            else {
+                oam->texU = j * 64;
+                oam->attr2 = SPRITE_ATTR2(0x1A0, 0, 9) + j*0x20;
+            }
+            oam->texture = choicesTex;
             oam++;
         }
     }
@@ -158,7 +165,7 @@ void EpisodeClearedProcess(struct Main * main)
             EpisodeLoadGfx(main);
             if(gMain.saveContinueFlags & 0xF0)
             {
-                ReadSram(SRAM_START, (void*)&gSaveDataBuffer, sizeof(gSaveDataBuffer));
+                //ReadSram(SRAM_START, (void*)&gSaveDataBuffer, sizeof(gSaveDataBuffer));
                 gSaveDataBuffer.main.caseEnabledFlags |= 1 << main->process[GAME_PROCESS_VAR2];
                 SaveGameData();
             }
@@ -167,7 +174,7 @@ void EpisodeClearedProcess(struct Main * main)
                 DmaCopy16(3, gSaveVersion, gSaveDataBuffer.saveDataVer, sizeof(gSaveVersion));
                 gSaveDataBuffer.magic = 0;
                 gSaveDataBuffer.main.caseEnabledFlags |= 1 << main->process[GAME_PROCESS_VAR2];
-                WriteSramEx((void*)&gSaveDataBuffer, SRAM_START, sizeof(gSaveDataBuffer));
+                //WriteSramEx((void*)&gSaveDataBuffer, SRAM_START, sizeof(gSaveDataBuffer));
             }
             break;
         case 2:
@@ -578,7 +585,7 @@ void SelectEpisodeProcess(struct Main * main)
                     main->scenarioIdx = 0;
                     break;
                 case 1:
-                    main->scenarioIdx = 1;
+                    main->scenarioIdx = 2;
                     break;
                 case 2:
                     main->scenarioIdx = 5;
@@ -589,6 +596,7 @@ void SelectEpisodeProcess(struct Main * main)
                 default:
                     main->scenarioIdx = 0;
             }
+            HideAllSprites();
             SET_PROCESS_PTR(gCaseStartProcess[main->scenarioIdx], 0, 0, 0, main);
             break;
         case 12: // _08009A44
@@ -730,7 +738,7 @@ void ContinueSaveProcess(struct Main * main) {
             DmaCopy16(3, gUnusedAsciiCharSet, BG_VRAM + 0x3800, 0x800);
             DmaCopy16(3, gGfxSaveGameTiles, BG_VRAM, 0x1000);
             i = (uintptr_t)GetBGPalettePtr(0); // ! BAD FAKEMATCH?
-            DmaCopy16(3, i, BG_PLTT, 0x200);
+            DmaCopy16(3, (void*)i, BG_PLTT, 0x200);
             DmaCopy16(3, &gSaveDataBuffer.main, &gMain, sizeof(gMain));
             LoadCurrentScriptIntoRam();
             DmaCopy16(3, gPalInvestigationExamineCursors, OBJ_PLTT + 0x100, 0x20);
@@ -769,8 +777,8 @@ void ContinueSaveProcess(struct Main * main) {
                     DmaCopy16(3, gGfxTrialPressPresentButtons, OBJ_VRAM0 + 0x3000, 0x400);
                     DmaCopy16(3, gPalTrialPressPresentButtons, OBJ_PLTT + 0xA0, 0x20);
                     // mega thonk
-                    DmaCopy16(3, gGfx4bppTestimonyArrows, 0x1A0, 0x80);
-                    DmaCopy16(3, gGfx4bppTestimonyArrows + TILE_SIZE_4BPP*4 * 3, 0x220, 0x80);
+                    //DmaCopy16(3, gGfx4bppTestimonyArrows, 0x1A0, 0x80);
+                    //DmaCopy16(3, gGfx4bppTestimonyArrows + TILE_SIZE_4BPP*4 * 3, 0x220, 0x80);
                 }
             }
             // 9FD0

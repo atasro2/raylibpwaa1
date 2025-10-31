@@ -1,0 +1,20 @@
+sheet: sheet-ABE8
+arrangements:
+  '24':
+  - part: 100
+    x: 120
+    y: 64
+  '32':
+frames:
+- duration: 4
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

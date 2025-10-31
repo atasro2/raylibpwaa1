@@ -1,0 +1,12 @@
+#ifndef GUARD_animation26_H
+#define GUARD_animation26_H
+
+#define ANIM_ANIMATION26_MAX_SPRITE_COUNT 10
+
+#define ANIM_ANIMATION26_0 0
+#define ANIM_ANIMATION26_0 0
+
+#define ANIM_ANIMATION26_DC 220
+#define ANIM_ANIMATION26_DC 220
+
+#endif

@@ -1,0 +1,63 @@
+sheet: sheet-1B378
+arrangements:
+  '48':
+  - part: 0
+    x: 88
+    y: 72
+    palette: 0
+  - part: 1
+    x: 120
+    y: 72
+    palette: 0
+  '60':
+  - part: 2
+    x: 120
+    y: 72
+    palette: 0
+  - part: 3
+    x: 88
+    y: 72
+    palette: 0
+  '72':
+  - part: 4
+    x: 88
+    y: 72
+    palette: 0
+  - part: 5
+    x: 120
+    y: 72
+    palette: 0
+  '84':
+frames:
+- duration: 20
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 48
+- duration: 20
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 60
+- duration: 20
+  flag10: False
+  flag40: False
+  sfx:
+    id: 98
+    enabled: False
+  action:
+  arrangement: 72
+- duration: 20
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 60
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 48

@@ -1,0 +1,7 @@
+gfx: sheet-788.png
+alphaencode: true
+parts:
+  - x: 0
+    y: 0
+    w: 32
+    h: 16

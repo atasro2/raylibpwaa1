@@ -1,0 +1,15 @@
+gfx: sheet-1034.png
+alphaencode: true
+parts:
+  - x: 0
+    y: 0
+    w: 16
+    h: 16
+  - x: 16
+    y: 0
+    w: 16
+    h: 8
+  - x: 16
+    y: 8
+    w: 8
+    h: 8

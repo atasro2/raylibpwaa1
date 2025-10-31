@@ -1,0 +1,41 @@
+sheet: sheet-19150
+arrangements:
+  '24':
+  - part: 57
+    x: 64
+    y: 72
+  - part: 58
+    x: 128
+    y: 72
+  - part: 59
+    x: 160
+    y: 72
+  - part: 60
+    x: 160
+    y: 104
+  - part: 61
+    x: 64
+    y: 136
+  - part: 62
+    x: 88
+    y: 8
+  - part: 63
+    x: 88
+    y: 0
+  - part: 64
+    x: 120
+    y: 0
+  '60':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

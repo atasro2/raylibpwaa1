@@ -1,0 +1,21 @@
+sheet: sheet-0
+arrangements:
+  '24':
+  - part: 1
+    x: 56
+    y: 80
+    palette: 0
+  '32':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

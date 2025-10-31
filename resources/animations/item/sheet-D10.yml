@@ -1,0 +1,10 @@
+gfx: sheet-D10.png
+parts:
+  - x: 0
+    y: 0
+    w: 32
+    h: 32
+  - x: 0
+    y: 32
+    w: 32
+    h: 16

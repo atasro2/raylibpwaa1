@@ -1,0 +1,10 @@
+gfx: sheet-1A830.png
+parts:
+  - x: 0
+    y: 0
+    w: 64
+    h: 64
+  - x: 64
+    y: 0
+    w: 32
+    h: 32

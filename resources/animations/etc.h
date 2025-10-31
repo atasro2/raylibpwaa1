@@ -1,0 +1,150 @@
+#ifndef GUARD_etc_H
+#define GUARD_etc_H
+
+#define ANIM_ETC_MAX_SPRITE_COUNT 15
+
+#define ANIM_ETC_0 0
+#define ANIM_ETC_0 0
+
+#define ANIM_ETC_128 296
+#define ANIM_ETC_128 296
+
+#define ANIM_ETC_250 592
+#define ANIM_ETC_250 592
+
+#define ANIM_ETC_270 624
+#define ANIM_ETC_270 624
+
+#define ANIM_ETC_290 656
+#define ANIM_ETC_290 656
+
+#define ANIM_ETC_2B0 688
+#define ANIM_ETC_2B0 688
+
+#define ANIM_ETC_2D0 720
+#define ANIM_ETC_2D0 720
+
+#define ANIM_ETC_308 776
+#define ANIM_ETC_308 776
+
+#define ANIM_ETC_340 832
+#define ANIM_ETC_340 832
+
+#define ANIM_ETC_378 888
+#define ANIM_ETC_378 888
+
+#define ANIM_ETC_3A8 936
+#define ANIM_ETC_3A8 936
+
+#define ANIM_ETC_3DC 988
+#define ANIM_ETC_3DC 988
+
+#define ANIM_ETC_46C 1132
+#define ANIM_ETC_46C 1132
+
+#define ANIM_ETC_55C 1372
+#define ANIM_ETC_55C 1372
+
+#define ANIM_ETC_89C 2204
+#define ANIM_ETC_89C 2204
+
+#define ANIM_ETC_8D4 2260
+#define ANIM_ETC_8D4 2260
+
+#define ANIM_ETC_90C 2316
+#define ANIM_ETC_90C 2316
+
+#define ANIM_ETC_A20 2592
+#define ANIM_ETC_A20 2592
+
+#define ANIM_ETC_A88 2696
+#define ANIM_ETC_A88 2696
+
+#define ANIM_ETC_B5C 2908
+#define ANIM_ETC_B5C 2908
+
+#define ANIM_ETC_B80 2944
+#define ANIM_ETC_B80 2944
+
+#define ANIM_ETC_BA0 2976
+#define ANIM_ETC_BA0 2976
+
+#define ANIM_ETC_BF4 3060
+#define ANIM_ETC_BF4 3060
+
+#define ANIM_ETC_CCC 3276
+#define ANIM_ETC_CCC 3276
+
+#define ANIM_ETC_D2C 3372
+#define ANIM_ETC_D2C 3372
+
+#define ANIM_ETC_D68 3432
+#define ANIM_ETC_D68 3432
+
+#define ANIM_ETC_D8C 3468
+#define ANIM_ETC_D8C 3468
+
+#define ANIM_ETC_DC4 3524
+#define ANIM_ETC_DC4 3524
+
+#define ANIM_ETC_DE8 3560
+#define ANIM_ETC_DE8 3560
+
+#define ANIM_ETC_E2C 3628
+#define ANIM_ETC_E2C 3628
+
+#define ANIM_ETC_E98 3736
+#define ANIM_ETC_E98 3736
+
+#define ANIM_ETC_F04 3844
+#define ANIM_ETC_F04 3844
+
+#define ANIM_ETC_F40 3904
+#define ANIM_ETC_F40 3904
+
+#define ANIM_ETC_F7C 3964
+#define ANIM_ETC_F7C 3964
+
+#define ANIM_ETC_FAC 4012
+#define ANIM_ETC_FAC 4012
+
+#define ANIM_ETC_FD4 4052
+#define ANIM_ETC_FD4 4052
+
+#define ANIM_ETC_FF8 4088
+#define ANIM_ETC_FF8 4088
+
+#define ANIM_ETC_1028 4136
+#define ANIM_ETC_1028 4136
+
+#define ANIM_ETC_1050 4176
+#define ANIM_ETC_1050 4176
+
+#define ANIM_ETC_1078 4216
+#define ANIM_ETC_1078 4216
+
+#define ANIM_ETC_10A8 4264
+#define ANIM_ETC_10A8 4264
+
+#define ANIM_ETC_10FC 4348
+#define ANIM_ETC_10FC 4348
+
+#define ANIM_ETC_111C 4380
+#define ANIM_ETC_111C 4380
+
+#define ANIM_ETC_1148 4424
+#define ANIM_ETC_1148 4424
+
+#define ANIM_ETC_116C 4460
+#define ANIM_ETC_116C 4460
+
+#define ANIM_ETC_1190 4496
+#define ANIM_ETC_1190 4496
+
+#define ANIM_ETC_11BC 4540
+#define ANIM_ETC_11BC 4540
+
+#define ANIM_ETC_11EC 4588
+#define ANIM_ETC_11EC 4588
+
+#endif

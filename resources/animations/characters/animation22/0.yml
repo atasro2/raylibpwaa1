@@ -1,0 +1,187 @@
+sheet: sheet-0
+arrangements:
+  '88':
+  - part: 0
+    x: 104
+    y: 72
+    palette: 0
+  - part: 1
+    x: 104
+    y: 104
+    palette: 0
+  - part: 2
+    x: 136
+    y: 104
+    palette: 0
+  - part: 3
+    x: 168
+    y: 40
+    palette: 0
+  - part: 4
+    x: 168
+    y: 72
+    palette: 0
+  - part: 5
+    x: 168
+    y: 104
+    palette: 0
+  - part: 6
+    x: 184
+    y: 40
+    palette: 0
+  - part: 7
+    x: 184
+    y: 72
+    palette: 0
+  - part: 8
+    x: 184
+    y: 104
+    palette: 0
+  - part: 9
+    x: 104
+    y: 40
+    palette: 0
+  '132':
+  - part: 0
+    x: 104
+    y: 72
+    palette: 0
+  - part: 1
+    x: 104
+    y: 104
+    palette: 0
+  - part: 2
+    x: 136
+    y: 104
+    palette: 0
+  - part: 3
+    x: 168
+    y: 40
+    palette: 0
+  - part: 4
+    x: 168
+    y: 72
+    palette: 0
+  - part: 5
+    x: 168
+    y: 104
+    palette: 0
+  - part: 6
+    x: 184
+    y: 40
+    palette: 0
+  - part: 7
+    x: 184
+    y: 72
+    palette: 0
+  - part: 8
+    x: 184
+    y: 104
+    palette: 0
+  - part: 10
+    x: 104
+    y: 40
+    palette: 0
+  '176':
+  - part: 0
+    x: 104
+    y: 72
+    palette: 0
+  - part: 1
+    x: 104
+    y: 104
+    palette: 0
+  - part: 2
+    x: 136
+    y: 104
+    palette: 0
+  - part: 3
+    x: 168
+    y: 40
+    palette: 0
+  - part: 4
+    x: 168
+    y: 72
+    palette: 0
+  - part: 5
+    x: 168
+    y: 104
+    palette: 0
+  - part: 6
+    x: 184
+    y: 40
+    palette: 0
+  - part: 7
+    x: 184
+    y: 72
+    palette: 0
+  - part: 8
+    x: 184
+    y: 104
+    palette: 0
+  - part: 11
+    x: 104
+    y: 40
+    palette: 0
+  '220':
+frames:
+- duration: 50
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 88
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 132
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 176
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 132
+- duration: 230
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 88
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 132
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 176
+- duration: 6
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 132
+- duration: 240
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 88
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 88

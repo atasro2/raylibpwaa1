@@ -34,14 +34,15 @@ u32 SaveGameData()
     gSaveDataBuffer.main.saveContinueFlags |= 0x10;
     DmaCopy16(3, gSaveVersion, gSaveDataBuffer.saveDataVer, sizeof(gSaveVersion));
     CalculateSaveChecksum();
-    return WriteSramEx((void*)&gSaveDataBuffer, SRAM_START, sizeof(gSaveDataBuffer));
+    return 1;
+    //return WriteSramEx((void*)&gSaveDataBuffer, SRAM_START, sizeof(gSaveDataBuffer));
 }
 
 u32 LoadSaveData()
 {
     u32 i;
     char * sramVer;
-    ReadSram(SRAM_START, (void*)&gSaveDataBuffer, 0x29D0);
+    //ReadSram(SRAM_START, (void*)&gSaveDataBuffer, 0x29D0);
     sramVer = gSaveDataBuffer.saveDataVer;
     for(i = 0; i < 0x30; i++)
     {
@@ -208,7 +209,7 @@ void ClearSaveProcess(struct Main *main)
             if(main->selectedButton == 0)
             {
                 DmaFill32(3, 0, &gSaveDataBuffer, sizeof(gSaveDataBuffer));
-                WriteSramEx((void*)&gSaveDataBuffer, SRAM_START, sizeof(gSaveDataBuffer));
+                //WriteSramEx((void*)&gSaveDataBuffer, SRAM_START, sizeof(gSaveDataBuffer));
             }
             SET_PROCESS_PTR(CAPCOM_LOGO_PROCESS, 0, 0, 0, main);
         }
@@ -229,12 +230,12 @@ void SaveGameProcess(struct Main *main)
 void SaveGameInit1(struct Main *main)
 {
     u32 i;
-    DmaCopy16(3, gBG1MapBuffer, gSaveDataBuffer.bg1Map, sizeof(gBG1MapBuffer));
-    DmaCopy16(3, gBG2MapBuffer, gSaveDataBuffer.bg2Map, sizeof(gBG2MapBuffer));
-    DmaCopy16(3, gTextBoxCharacters, gSaveDataBuffer.textBoxCharacters, sizeof(gTextBoxCharacters));
-    DmaCopy16(3, &gScriptContext, &gSaveDataBuffer.scriptCtx, sizeof(gScriptContext));
-    DmaCopy16(3, &gIORegisters, &gSaveDataBuffer.ioRegs, sizeof(gIORegisters));
-    DmaCopy16(3, gMapMarker, gSaveDataBuffer.mapMarker, sizeof(gMapMarker));
+    memcpy(gSaveDataBuffer.bg1Map, gBG1MapBuffer, sizeof(gBG1MapBuffer));
+    memcpy(gSaveDataBuffer.bg2Map, gBG2MapBuffer, sizeof(gBG2MapBuffer));
+    memcpy(gSaveDataBuffer.textBoxCharacters, gTextBoxCharacters, sizeof(gTextBoxCharacters));
+    memcpy(&gSaveDataBuffer.scriptCtx, &gScriptContext, sizeof(gScriptContext));
+    memcpy(&gSaveDataBuffer.ioRegs, &gIORegisters, sizeof(gIORegisters));
+    memcpy(gSaveDataBuffer.mapMarker, gMapMarker, sizeof(gMapMarker));
     for(i = 0; i < ARRAY_COUNT(gMapMarker); i++)
     {
         gMapMarker[i].id |= 0xFF;
@@ -251,19 +252,21 @@ void SaveGameInit2(struct Main *main)
     u32 i;
     if(main->blendMode != 0)
         return;
-    DmaCopy16(3, gBG0MapBuffer, gSaveDataBuffer.bg0Map, sizeof(gBG0MapBuffer));
-    DmaCopy16(3, &gCourtRecord, &gSaveDataBuffer.courtRecord, sizeof(gCourtRecord));
-    DmaCopy16(3, &gInvestigation, &gSaveDataBuffer.investigation, sizeof(gInvestigation));
-    DmaCopy16(3, &gTestimony, &gSaveDataBuffer.testimony, sizeof(gTestimony));
-    DmaCopy16(3, &gCourtScroll, &gSaveDataBuffer.courtScroll, sizeof(gCourtScroll))
-    DmaCopy16(3, gExaminationData, gSaveDataBuffer.examinationData, sizeof(gExaminationData));
-    DmaCopy16(3, gTalkData, gSaveDataBuffer.talkData, sizeof(gTalkData));
+    memcpy(gSaveDataBuffer.bg0Map, gBG0MapBuffer, sizeof(gBG0MapBuffer));
+    memcpy(&gSaveDataBuffer.courtRecord, &gCourtRecord, sizeof(gCourtRecord));
+    memcpy(&gSaveDataBuffer.investigation, &gInvestigation, sizeof(gInvestigation));
+    memcpy(&gSaveDataBuffer.testimony, &gTestimony, sizeof(gTestimony));
+    memcpy(&gSaveDataBuffer.courtScroll, &gCourtScroll, sizeof(gCourtScroll));
+    memcpy(gSaveDataBuffer.examinationData, gExaminationData, sizeof(gExaminationData));
+    memcpy(gSaveDataBuffer.talkData, gTalkData, sizeof(gTalkData));
+    
     DmaCopy16(3, gGfxNewGameContinue, OBJ_VRAM0 + 0x3800, 0x400);
     DmaCopy16(3, gPalNewGameContinue, OBJ_PLTT + 0x100, 0xC0);
     DmaCopy16(3, gGfxSaveYesOrNo, OBJ_VRAM0 + 0x3C00, 0x800);
     DmaCopy16(3, gPalChoiceSelected, OBJ_PLTT + 0x120, 0x40);
     DecompressBackgroundIntoBuffer(0x43);
     CopyBGDataToVram(0x43);
+    
     main->animationFlags &= ~3;
     oam = gOamObjects;
     for(i = 0; i < MAX_OAM_OBJ_COUNT; i++)
@@ -442,13 +445,13 @@ void SaveGameExitSaveScreen(struct Main *main)
     }
     DecompressBackgroundIntoBuffer(main->currentBG);
     CopyBGDataToVramAndScrollBG(main->currentBG);
-    DmaCopy16(3, gSaveDataBuffer.bg2Map, gBG2MapBuffer, sizeof(gBG2MapBuffer));
-    DmaCopy16(3, gSaveDataBuffer.textBoxCharacters, gTextBoxCharacters, sizeof(gTextBoxCharacters));
+    memcpy(gBG2MapBuffer, gSaveDataBuffer.bg2Map, sizeof(gBG2MapBuffer));
+    memcpy(gTextBoxCharacters, gSaveDataBuffer.textBoxCharacters, sizeof(gTextBoxCharacters));
     RedrawTextboxCharacters();
-    DmaCopy16(3, &gSaveDataBuffer.scriptCtx, &gScriptContext, sizeof(gScriptContext));
-    DmaCopy16(3, &gSaveDataBuffer.ioRegs, &gIORegisters, sizeof(gIORegisters));
-    DmaCopy16(3, gSaveDataBuffer.mapMarker, gMapMarker, sizeof(gMapMarker));
-    DmaCopy16(3, gSaveDataBuffer.talkData, gTalkData, sizeof(gTalkData));
+    memcpy(&gScriptContext, &gSaveDataBuffer.scriptCtx, sizeof(gScriptContext));
+    memcpy(&gIORegisters, &gSaveDataBuffer.ioRegs, sizeof(gIORegisters));
+    memcpy(gMapMarker, gSaveDataBuffer.mapMarker, sizeof(gMapMarker));
+    memcpy(gTalkData, gSaveDataBuffer.talkData, sizeof(gTalkData));
     main->advanceScriptContext = gSaveDataBuffer.main.advanceScriptContext;
     main->showTextboxCharacters = gSaveDataBuffer.main.showTextboxCharacters;
     main->gameStateFlags = gSaveDataBuffer.main.gameStateFlags;
@@ -456,7 +459,7 @@ void SaveGameExitSaveScreen(struct Main *main)
     main->tilemapUpdateBits = gSaveDataBuffer.main.tilemapUpdateBits;
     RestoreAnimationsFromBuffer(gSaveDataBuffer.backupAnimations);
     gMain.animationFlags |= 3;
-    DmaCopy16(3, gSaveDataBuffer.oam, gOamObjects, sizeof(gOamObjects));
+    memcpy(gOamObjects, gSaveDataBuffer.oam, sizeof(gOamObjects));
     DmaCopy16(3, &gPalInvestigationExamineCursors[0], OBJ_PLTT+0x100, 0x20);
     RESTORE_PROCESS_PTR(main);
     if(main->process[GAME_PROCESS] == INVESTIGATION_PROCESS && main->process[GAME_PROCESS_VAR1] == 3)

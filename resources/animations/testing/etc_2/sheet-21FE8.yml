@@ -1,0 +1,11 @@
+gfx: sheet-21FE8.png
+alphaencode: true
+parts:
+  - x: 0
+    y: 0
+    w: 16
+    h: 32
+  - x: 0
+    y: 32
+    w: 8
+    h: 8

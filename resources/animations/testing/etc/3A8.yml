@@ -1,0 +1,41 @@
+sheet: sheet-7E70
+arrangements:
+  '24':
+  - part: 5
+    x: 112
+    y: 136
+    palette: 0
+  - part: 6
+    x: 80
+    y: 144
+    palette: 0
+  - part: 7
+    x: 80
+    y: 136
+    palette: 0
+  - part: 8
+    x: 112
+    y: 144
+    palette: 0
+  - part: 9
+    x: 144
+    y: 136
+    palette: 0
+  - part: 10
+    x: 144
+    y: 144
+    palette: 0
+  '52':
+frames:
+- duration: 32
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

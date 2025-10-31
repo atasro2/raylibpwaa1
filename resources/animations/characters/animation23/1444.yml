@@ -1,0 +1,62 @@
+sheet: sheet-0
+arrangements:
+  '24':
+  - part: 0
+    x: 80
+    y: 72
+  - part: 1
+    x: 144
+    y: 80
+  - part: 2
+    x: 144
+    y: 112
+  - part: 3
+    x: 144
+    y: 128
+  - part: 4
+    x: 176
+    y: 120
+  - part: 5
+    x: 160
+    y: 96
+  - part: 6
+    x: 64
+    y: 96
+  - part: 7
+    x: 56
+    y: 112
+  - part: 8
+    x: 64
+    y: 128
+  - part: 9
+    x: 56
+    y: 128
+  - part: 10
+    x: 48
+    y: 128
+  - part: 25
+    x: 152
+    y: 136
+  - part: 26
+    x: 56
+    y: 136
+  - part: 55
+    x: 80
+    y: 40
+  - part: 56
+    x: 88
+    y: 16
+  '88':
+frames:
+- duration: 10
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

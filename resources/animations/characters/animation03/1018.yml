@@ -1,0 +1,541 @@
+sheet: sheet-0
+arrangements:
+  '192':
+  - part: 73
+    x: 56
+    y: 128
+  - part: 74
+    x: 120
+    y: 128
+  - part: 75
+    x: 152
+    y: 128
+  - part: 76
+    x: 128
+    y: 96
+  - part: 77
+    x: 64
+    y: 96
+  - part: 78
+    x: 160
+    y: 96
+  - part: 79
+    x: 136
+    y: 80
+  - part: 80
+    x: 104
+    y: 80
+  - part: 81
+    x: 72
+    y: 80
+  - part: 82
+    x: 104
+    y: 64
+  - part: 83
+    x: 152
+    y: 64
+  - part: 84
+    x: 136
+    y: 48
+  - part: 85
+    x: 104
+    y: 48
+  - part: 86
+    x: 104
+    y: 32
+  - part: 87
+    x: 136
+    y: 16
+  - part: 88
+    x: 104
+    y: 16
+  - part: 89
+    x: 96
+    y: 16
+  - part: 90
+    x: 104
+    y: 8
+  - part: 91
+    x: 80
+    y: 72
+  - part: 92
+    x: 160
+    y: 72
+  - part: 93
+    x: 112
+    y: 0
+  - part: 94
+    x: 96
+    y: 64
+  '284':
+  - part: 73
+    x: 56
+    y: 128
+  - part: 74
+    x: 120
+    y: 128
+  - part: 75
+    x: 152
+    y: 128
+  - part: 76
+    x: 128
+    y: 96
+  - part: 77
+    x: 64
+    y: 96
+  - part: 78
+    x: 160
+    y: 96
+  - part: 79
+    x: 136
+    y: 80
+  - part: 80
+    x: 104
+    y: 80
+  - part: 81
+    x: 72
+    y: 80
+  - part: 82
+    x: 104
+    y: 64
+  - part: 83
+    x: 152
+    y: 64
+  - part: 84
+    x: 136
+    y: 48
+  - part: 85
+    x: 104
+    y: 48
+  - part: 95
+    x: 104
+    y: 32
+  - part: 87
+    x: 136
+    y: 16
+  - part: 88
+    x: 104
+    y: 16
+  - part: 89
+    x: 96
+    y: 16
+  - part: 90
+    x: 104
+    y: 8
+  - part: 91
+    x: 80
+    y: 72
+  - part: 92
+    x: 160
+    y: 72
+  - part: 93
+    x: 112
+    y: 0
+  - part: 94
+    x: 96
+    y: 64
+  '376':
+  - part: 73
+    x: 56
+    y: 128
+  - part: 74
+    x: 120
+    y: 128
+  - part: 75
+    x: 152
+    y: 128
+  - part: 76
+    x: 128
+    y: 96
+  - part: 77
+    x: 64
+    y: 96
+  - part: 78
+    x: 160
+    y: 96
+  - part: 79
+    x: 136
+    y: 80
+  - part: 80
+    x: 104
+    y: 80
+  - part: 81
+    x: 72
+    y: 80
+  - part: 82
+    x: 104
+    y: 64
+  - part: 83
+    x: 152
+    y: 64
+  - part: 84
+    x: 136
+    y: 48
+  - part: 85
+    x: 104
+    y: 48
+  - part: 96
+    x: 104
+    y: 32
+  - part: 87
+    x: 136
+    y: 16
+  - part: 88
+    x: 104
+    y: 16
+  - part: 89
+    x: 96
+    y: 16
+  - part: 90
+    x: 104
+    y: 8
+  - part: 91
+    x: 80
+    y: 72
+  - part: 92
+    x: 160
+    y: 72
+  - part: 93
+    x: 112
+    y: 0
+  - part: 94
+    x: 96
+    y: 64
+  '468':
+  - part: 73
+    x: 56
+    y: 128
+  - part: 74
+    x: 120
+    y: 128
+  - part: 75
+    x: 152
+    y: 128
+  - part: 76
+    x: 128
+    y: 96
+  - part: 77
+    x: 64
+    y: 96
+  - part: 78
+    x: 160
+    y: 96
+  - part: 79
+    x: 136
+    y: 80
+  - part: 80
+    x: 104
+    y: 80
+  - part: 81
+    x: 72
+    y: 80
+  - part: 97
+    x: 104
+    y: 48
+  - part: 98
+    x: 104
+    y: 64
+  - part: 83
+    x: 152
+    y: 64
+  - part: 84
+    x: 136
+    y: 48
+  - part: 86
+    x: 104
+    y: 32
+  - part: 87
+    x: 136
+    y: 16
+  - part: 88
+    x: 104
+    y: 16
+  - part: 89
+    x: 96
+    y: 16
+  - part: 90
+    x: 104
+    y: 8
+  - part: 91
+    x: 80
+    y: 72
+  - part: 92
+    x: 160
+    y: 72
+  - part: 93
+    x: 112
+    y: 0
+  - part: 94
+    x: 96
+    y: 64
+  '560':
+  - part: 73
+    x: 56
+    y: 128
+  - part: 74
+    x: 120
+    y: 128
+  - part: 75
+    x: 152
+    y: 128
+  - part: 76
+    x: 128
+    y: 96
+  - part: 77
+    x: 64
+    y: 96
+  - part: 78
+    x: 160
+    y: 96
+  - part: 79
+    x: 136
+    y: 80
+  - part: 80
+    x: 104
+    y: 80
+  - part: 81
+    x: 72
+    y: 80
+  - part: 82
+    x: 104
+    y: 64
+  - part: 83
+    x: 152
+    y: 64
+  - part: 84
+    x: 136
+    y: 48
+  - part: 99
+    x: 104
+    y: 48
+  - part: 86
+    x: 104
+    y: 32
+  - part: 87
+    x: 136
+    y: 16
+  - part: 88
+    x: 104
+    y: 16
+  - part: 89
+    x: 96
+    y: 16
+  - part: 90
+    x: 104
+    y: 8
+  - part: 91
+    x: 80
+    y: 72
+  - part: 92
+    x: 160
+    y: 72
+  - part: 93
+    x: 112
+    y: 0
+  - part: 94
+    x: 96
+    y: 64
+  '652':
+  - part: 73
+    x: 56
+    y: 128
+  - part: 74
+    x: 120
+    y: 128
+  - part: 75
+    x: 152
+    y: 128
+  - part: 76
+    x: 128
+    y: 96
+  - part: 77
+    x: 64
+    y: 96
+  - part: 78
+    x: 160
+    y: 96
+  - part: 79
+    x: 136
+    y: 80
+  - part: 80
+    x: 104
+    y: 80
+  - part: 81
+    x: 72
+    y: 80
+  - part: 100
+    x: 104
+    y: 48
+  - part: 83
+    x: 152
+    y: 64
+  - part: 84
+    x: 136
+    y: 48
+  - part: 95
+    x: 104
+    y: 32
+  - part: 87
+    x: 136
+    y: 16
+  - part: 88
+    x: 104
+    y: 16
+  - part: 89
+    x: 96
+    y: 16
+  - part: 90
+    x: 104
+    y: 8
+  - part: 91
+    x: 80
+    y: 72
+  - part: 92
+    x: 160
+    y: 72
+  - part: 93
+    x: 112
+    y: 0
+  - part: 94
+    x: 96
+    y: 64
+  '740':
+frames:
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 560
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 560
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 5
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 284
+- duration: 3
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 376
+- duration: 5
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 652
+- duration: 3
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 560
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 560
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 560
+- duration: 8
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 468
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 192

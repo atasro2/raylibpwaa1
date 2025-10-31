@@ -1,0 +1,6 @@
+gfx: sheet-1B254.png
+sprites:
+  - x: 0
+    y: 0
+    w: 16
+    h: 32

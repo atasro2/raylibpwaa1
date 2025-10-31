@@ -7,6 +7,17 @@
 
 #include "data/background.h"
 
+static struct Texture bgTexture;
+
+void LoadBackgroundFromFile(char * fileName) {
+    UnloadTexture(bgTexture);
+    bgTexture = LoadTexture(fileName);
+}
+
+void DrawBackground(void) {
+    DrawTextureEx(bgTexture, (Vector2){0, 0}, 0.0f, 2.0f, WHITE);
+}
+
 // BG_all_init
 void InitBGs()
 {
@@ -389,15 +400,15 @@ void UpdateBackground() // BG256_main
     u32 unk0;
     u32 unk1;
 
-    if(gCourtScroll.state != 0 && (gCourtScroll.frameCounter & 1) == 0) // frameCounter divisible by 2?
-    {
-        u8 * ptr = gCourtScroll.frameDataPtr;
-        ioRegs->lcd_bg3cnt &= ~BGCNT_256COLOR;
-        ptr += gCourtScroll.frameCounter / 2 * (0x4B00 + 0x20);
-        DmaCopy16(3, ptr, PLTT+0x40, 0x20);
-        ptr += 0x20;
-        DmaCopy16(3, ptr, BG_CHAR_ADDR(1), 0x4B00);
-    }
+    //if(gCourtScroll.state != 0 && (gCourtScroll.frameCounter & 1) == 0) // frameCounter divisible by 2?
+    //{
+    //    u8 * ptr = gCourtScroll.frameDataPtr;
+    //    ioRegs->lcd_bg3cnt &= ~BGCNT_256COLOR;
+    //    ptr += gCourtScroll.frameCounter / 2 * (0x4B00 + 0x20);
+    //    DmaCopy16(3, ptr, PLTT+0x40, 0x20);
+    //    ptr += 0x20;
+    //    DmaCopy16(3, ptr, BG_CHAR_ADDR(1), 0x4B00);
+    //}
     if(main->isBGScrolling == FALSE)
         return;
     unk0 = gBackgroundTable[main->currentBG].controlBits;
@@ -524,41 +535,17 @@ void DecompressCurrentBGStripe(u32 bgId)
         UpdateAnimations(gMain.previousBG);
         return;
     }
-    bgData = (void*)gBackgroundTable[bgId].bgData;
     if(gMain.currentBgStripe == 1)
     {
-        u32 * ptr;
-        ptr = (u32 *)bgData;
-        for(i = 1; i < 11; i++)
-            gMain.bgStripeOffsets[i] = *ptr++;
         UpdateAnimations(gMain.previousBG);
     }
-    bgData += gMain.bgStripeOffsets[gMain.currentBgStripe];
-    flags = gBackgroundTable[bgId].controlBits; 
-    if(flags & BG_MODE_SIZE_480x160)
-        size = 0x1E00;
-    else if(flags & BG_MODE_SIZE_240x320)
-        size = 0x1E00;
-    else
-        size = 0xF00;
-    if(flags & BG_MODE_4BPP)
-        size /= 2;
-    if(gMain.currentBgStripe == 1)
-    {
-        if(flags & BG_MODE_4BPP)
-            bgData += 0x20;
-        else
-            bgData += 0x200;
-        gMain.bgStripeDestPtr = eBGDecompBuffer;
-    }
-    else
-        gMain.bgStripeDestPtr += size;
-    LZ77UnCompWram(bgData, gMain.bgStripeDestPtr);
+    //LoadBackgroundFromFile(gBackgroundTable[bgId].bgData);
     gMain.currentBgStripe++;
 }
 
 void DecompressBackgroundIntoBuffer(u32 bgId)
 {
+    /*
     u32 i;
     u32 size;
     u32 flags;
@@ -567,24 +554,24 @@ void DecompressBackgroundIntoBuffer(u32 bgId)
     UpdateAnimations(gMain.previousBG);
     bgId &= ~0x8000;
     if(bgId == 0xFF) 
-        return;
+    return;
     bgData = (void*)gBackgroundTable[bgId].bgData;
     ptr = (u32 *)bgData;
     for(i = 1; i < 11; i++)
-        gMain.bgStripeOffsets[i] = *ptr++;
+    gMain.bgStripeOffsets[i] = *ptr++;
     flags = gBackgroundTable[bgId].controlBits;
     if(flags & BG_MODE_SIZE_480x160)
-        size = 0x1E00;
+    size = 0x1E00;
     else if(flags & BG_MODE_SIZE_240x320)
-        size = 0x1E00;
+    size = 0x1E00;
     else
-        size = 0xF00;
+    size = 0xF00;
     if(flags & BG_MODE_4BPP)
         size /= 2;
-
-    if(flags & BG_MODE_4BPP)
+        
+        if(flags & BG_MODE_4BPP)
         bgData += 0x20;
-    else
+        else
         bgData += 0x200;
     bgData += gMain.bgStripeOffsets[1];
     gMain.bgStripeDestPtr = eBGDecompBuffer;
@@ -596,60 +583,13 @@ void DecompressBackgroundIntoBuffer(u32 bgId)
         bgData += gMain.bgStripeOffsets[i];
         LZ77UnCompWram(bgData, gMain.bgStripeDestPtr);
     }
+    */
+    //LoadBackgroundFromFile(gBackgroundTable[bgId].bgData);
 }
 
 void LoadCase3IntroBackgrounds()
 {
-    struct Main * main = &gMain;
-    struct IORegisters * ioRegs = &gIORegisters;
-    void * bgPtr;
-    void * tempPtr;
-    u32 * ptr;
-    u32 stripeSize;
-    u32 i, j;
-    bgPtr = gGfx_BG069_SteelSamuraiNight;
-    bgPtr+=0x28;
-    DmaCopy16(3, bgPtr, PLTT+0x40, 0x20);
-    ioRegs->lcd_bg3cnt &= ~BGCNT_256COLOR;
-    *(u16*)&REG_BG3CNT &= ~BGCNT_256COLOR; // volatile causes code diff lol
-    bgPtr = gGfx_BG074_Case3IntroGrass;
-    ptr = bgPtr;
-    stripeSize = 0xF00;
-    stripeSize /= 2;
-    for(i = 1; i < 11; i++)
-        main->bgStripeOffsets[i] = *ptr++;
-    tempPtr = bgPtr + 0x20;
-    tempPtr += main->bgStripeOffsets[1]; 
-    bgPtr = tempPtr;
-    main->bgStripeDestPtr = eBGDecompBuffer+0x5000;
-    LZ77UnCompWram(bgPtr, main->bgStripeDestPtr);
-    for(i = 2; i < 11; i++)
-    {
-        main->bgStripeDestPtr += stripeSize;
-        bgPtr = gGfx_BG074_Case3IntroGrass + main->bgStripeOffsets[i]; 
-        LZ77UnCompWram(bgPtr, main->bgStripeDestPtr);
-    }
-    bgPtr = gGfx_BG074_Case3IntroGrass;
-    bgPtr += 0x28;
-    DmaCopy16(3, bgPtr, PLTT+0x60, 0x20);
-    gIORegisters.lcd_bg2cnt = BGCNT_PRIORITY(0) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(30) | BGCNT_16COLOR | BGCNT_WRAP;
-    gIORegisters.lcd_dispcnt |= DISPCNT_BG2_ON;
-    for(i = 0; i < 20; i++)
-    {
-        for (j = 0; j < 30; j++)
-        {
-            gBG3MapBuffer[j + i * 32 + 0x1 + 0x20] = (j + i * 30) | 0x2000;
-            gBG2MapBuffer[j + i * 32 + 0x1] = ((j + i * 30) + 0x80) | 0x3000;
-        }
-        gBG2MapBuffer[i * 32] = gBG2MapBuffer[i * 32 + 31] = 0x80 | 0x3000;
-    }
-    for(i = 20; i < 25; i++)
-    {
-        for (j = 0; j < 30; j++)
-            gBG3MapBuffer[GET_MAP_TILE_INDEX(i, j, 1, 1)] = 0x2000;
-    }
-    DmaCopy16(3, eBGDecompBuffer, BG_CHAR_ADDR(1), 0x9B00);
-    gMain.isBGScrolling = TRUE;
+
 }
 
 void CopyBGDataToVram(u32 bgId)
@@ -670,8 +610,8 @@ void CopyBGDataToVram(u32 bgId)
         LoadCase3IntroBackgrounds();
         return;
     }
-    MoveAnimationTilesToRam(0);
-    MoveSpritesToOAM();
+    //MoveAnimationTilesToRam(0);
+    //MoveSpritesToOAM();
     tempBgCtrl = bgId;
     bgId &= ~0x8000;
     ioReg->lcd_bg3vofs = 8;
@@ -682,11 +622,13 @@ void CopyBGDataToVram(u32 bgId)
     main->currentBG = bgId;
     if(bgId == 0xFF)
     {
-        src = gUnknown_08014570;
-        dst = gBG3MapBuffer;
-        DmaCopy16(3, src, dst, sizeof(gUnknown_08014570));
-        DmaFill16(3, 0, BG_PLTT+0x40, 0x1C0);
-        DmaFill16(3, 0x2222, VRAM+0x4000, 0x9600);
+        UnloadTexture(bgTexture);
+        bgTexture = (Texture2D){};
+        //src = gUnknown_08014570;
+        //dst = gBG3MapBuffer;
+        //DmaCopy16(3, src, dst, sizeof(gUnknown_08014570));
+        //DmaFill16(3, 0, BG_PLTT+0x40, 0x1C0);
+        //DmaFill16(3, 0x2222, VRAM+0x4000, 0x9600);
         return;
     }
     i = gBackgroundTable[bgId].controlBits;
@@ -751,7 +693,7 @@ void CopyBGDataToVram(u32 bgId)
             src = gBG2MapBuffer;
             dst = (void *)BG_SCREEN_ADDR(30);
             DmaCopy16(3, src, dst, 0x580);
-            *(u16 *)REG_ADDR_BG2CNT = *(u16 *)&ioReg->lcd_bg2cnt;
+            //*(u16 *)REG_ADDR_BG2CNT = *(u16 *)&ioReg->lcd_bg2cnt;
         }
         else
         {
@@ -764,9 +706,10 @@ void CopyBGDataToVram(u32 bgId)
         ioReg->lcd_bg3cnt |= BGCNT_256COLOR;
         DmaCopy16(3, bgData, BG_PLTT, 0x200);
     }
-    *(u16*)&REG_DISPCNT = *(u16 *)&gIORegisters.lcd_dispcnt;
-    REG_BG3CNT = ioReg->lcd_bg3cnt;
-    *(u32*)&REG_BG3HOFS = *(u32*)&ioReg->lcd_bg3hofs;
+    //*(u16*)&REG_DISPCNT = *(u16 *)&gIORegisters.lcd_dispcnt;
+    //REG_BG3CNT = ioReg->lcd_bg3cnt;
+    //*(u32*)&REG_BG3HOFS = *(u32*)&ioReg->lcd_bg3hofs;
+    LoadBackgroundFromFile(gBackgroundTable[bgId].bgData);
     main->Bg256_dir = tempBgCtrl;
     bgData = eBGDecompBuffer;
     if((tempBgCtrl & BG_MODE_SIZE_MASK) == 0)

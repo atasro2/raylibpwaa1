@@ -203,6 +203,40 @@ const u16 gUnknown_08014570[0x2C0] = {
 
 };
 
+Texture2D textboxTilesetTexture;
+Texture2D speakerTilesetTexture;
+
+void InitTextbox(void) {
+    if(!IsTextureValid(textboxTilesetTexture)) {
+        textboxTilesetTexture = LoadTexture("ui/message_box/save_game_tiles.png");
+    }
+    if(!IsTextureValid(speakerTilesetTexture)) {
+        speakerTilesetTexture = LoadTexture("ui/message_box/nametags.png");
+    }
+}
+
+#include "rlgl.h"
+
+void DrawTextbox(void) {
+    int texTileWidth = textboxTilesetTexture.width/8;
+    rlSetBlendFactors(RL_DST_ALPHA, RL_SRC_ALPHA, RL_FUNC_ADD); // Match blending found on GBA
+    BeginBlendMode(BLEND_CUSTOM);
+        for(int i = 0; i < ARRAY_COUNT(gBG1MapBuffer); i++) {
+            int mapX = i % 32;
+            int mapY = i / 32;
+            int tile = gBG1MapBuffer[i];
+            int texU = tile % texTileWidth;
+            int texV = tile / texTileWidth;
+            if(tile == 0) continue;
+            if(tile > 0x50) continue; // TODO: ignore textbox name for now
+
+                DrawTexturePro(textboxTilesetTexture,
+                    (Rectangle){texU*8, texV*8, 8, 8},
+                    (Rectangle){mapX*8*2, mapY*8*2, 8*2, 8*2}, (Vector2){0,0}, 0, (Color){ 255, 255, 255, 112 });
+        }
+    EndBlendMode();       
+}
+
 void SetTextboxSize(u32 unk0)
 {
     struct ScriptContext * scriptCtx = &gScriptContext;

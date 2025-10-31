@@ -87,7 +87,9 @@ extern struct MapMarker gMapMarker[8];
 
 /* begin script data */
 
-extern const u32 std_scripts[];
+extern u8 * eScriptHeap;
+
+extern const u8 *std_scripts;
 extern const u8 scenario_0_script[];
 extern const u8 scenario_1_0_script[];
 extern const u8 scenario_1_1_script[];
@@ -113,6 +115,8 @@ void LoadCurrentScriptIntoRam();
 void RunScriptContext();
 void InitScriptSection(struct ScriptContext *scriptCtx);
 void RedrawTextboxCharacters();
+
+void DrawTextGS(Font font);
 
 void MakeMapMarkerSprites();
 u32 GetMapMarkerIndexFromId(u32);

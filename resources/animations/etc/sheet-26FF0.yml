@@ -1,0 +1,10 @@
+gfx: sheet-26FF0.png
+parts:
+  - x: 0
+    y: 0
+    w: 32
+    h: 64
+  - x: 0
+    y: 64
+    w: 32
+    h: 32

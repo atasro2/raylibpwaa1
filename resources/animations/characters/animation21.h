@@ -1,0 +1,12 @@
+#ifndef GUARD_animation21_H
+#define GUARD_animation21_H
+
+#define ANIM_ANIMATION21_MAX_SPRITE_COUNT 7
+
+#define ANIM_ANIMATION21_0 0
+#define ANIM_ANIMATION21_0 0
+
+#define ANIM_ANIMATION21_B4 180
+#define ANIM_ANIMATION21_B4 180
+
+#endif

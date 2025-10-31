@@ -64,13 +64,15 @@ Temporary Items
 *.striped
 tools/agbcc/
 tools/binutils/
-build/
 sound/songs/midi/*.s
+bin/
+build/build_files/
+build/external/
 
 # =========================
 # Misc
 # =========================
-
+fixup/
 tools/ignore/
 *.sav
 *.code-workspace
@@ -79,3 +81,7 @@ ddump
 *.cs
 *.cheats
 *.ss*
+*.xdelta
+screenshot*.png
+
+graphics/

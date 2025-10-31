@@ -1,0 +1,83 @@
+sheet: sheet-5DC4
+arrangements:
+  '24':
+  - part: 52
+    x: 168
+    y: 64
+  - part: 53
+    x: 184
+    y: 128
+  - part: 54
+    x: 192
+    y: 48
+  - part: 55
+    x: 176
+    y: 48
+  - part: 56
+    x: 168
+    y: 48
+  - part: 57
+    x: 168
+    y: 128
+  - part: 58
+    x: 120
+    y: 104
+  - part: 59
+    x: 152
+    y: 104
+  - part: 60
+    x: 120
+    y: 136
+  - part: 61
+    x: 152
+    y: 136
+  - part: 62
+    x: 184
+    y: 136
+  - part: 63
+    x: 136
+    y: 40
+  - part: 64
+    x: 120
+    y: 88
+  - part: 70
+    x: 136
+    y: 0
+  - part: 71
+    x: 144
+    y: 24
+  - part: 78
+    x: 88
+    y: 40
+  - part: 79
+    x: 104
+    y: 32
+  - part: 80
+    x: 96
+    y: 32
+  - part: 81
+    x: 96
+    y: 16
+  - part: 82
+    x: 96
+    y: 8
+  - part: 76
+    x: 104
+    y: 80
+  - part: 83
+    x: 104
+    y: 48
+  '116':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

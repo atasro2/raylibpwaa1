@@ -1,0 +1,45 @@
+sheet: sheet-11540
+arrangements:
+  '24':
+  - part: 7
+    x: 96
+    y: 96
+    palette: 0
+  - part: 8
+    x: 160
+    y: 152
+    palette: 0
+  - part: 9
+    x: 96
+    y: 32
+    palette: 0
+  - part: 10
+    x: 32
+    y: 32
+    palette: 0
+  - part: 11
+    x: 32
+    y: 96
+    palette: 0
+  - part: 12
+    x: 192
+    y: 136
+    palette: 0
+  - part: 13
+    x: 160
+    y: 120
+    palette: 0
+  '56':
+frames:
+- duration: 1
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

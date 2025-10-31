@@ -12,6 +12,8 @@
 #include "constants/process.h"
 #include "constants/animation_offsets.h"
 
+#include <stdio.h>
+
 #define DUMMYPERSON { .gfxData = 0, .frameData = 0, .spriteCount = 0, .unkA = 0 }
 #define DUMMYANIMATION { .gfxData = 0, .vramPtr = 0, .frameData = 0, .xOrigin = 0, .yOrigin = 0, .paletteSlot = 0, .spriteCount = 0, .priority = 0, .flags = 0x0, }
 
@@ -23,19 +25,22 @@ const struct PersonAnimationData gPersonAnimData[] = {
 		.frameData = gGfxSeqAnimationChar01,
 		.spriteCount = 37,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation01"
 	},
 	[PERSON_ANIM_DUMMY03] = DUMMYPERSON,
 	[PERSON_ANIM_MAYA] = {
-		.gfxData = gGfxPixAnimationChar02,
-		.frameData = gGfxSeqAnimationChar02,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 28,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation02"
 	},
 	[PERSON_ANIM_SUMMONED_MIA] = {
-		.gfxData = gGfxPixAnimationChar03,
-		.frameData = gGfxSeqAnimationChar03,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 28,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation03"
 	},
 	[PERSON_ANIM_DUMMY06] = DUMMYPERSON,
 	[PERSON_ANIM_MIA] = {
@@ -43,145 +48,170 @@ const struct PersonAnimationData gPersonAnimData[] = {
 		.frameData = gGfxSeqAnimationChar04,
 		.spriteCount = 28,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation04"
 	},
 	[PERSON_ANIM_JUDGE] = {
 		.gfxData = gGfxPixAnimationChar05,
 		.frameData = gGfxSeqAnimationChar05,
 		.spriteCount = 19,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation05"
 	},
 	[PERSON_ANIM_EDGEWORTH] = {
-		.gfxData = gGfxPixAnimationChar06,
-		.frameData = gGfxSeqAnimationChar06,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 38,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation06"
 	},
 	[PERSON_ANIM_WINSTON_PAYNE] = {
 		.gfxData = gGfxPixAnimationChar10,
 		.frameData = gGfxSeqAnimationChar10,
 		.spriteCount = 23,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation10"
 	},
 	[PERSON_ANIM_DUMMY11] = DUMMYPERSON,
 	[PERSON_ANIM_MARVIN_GROSSBERG] = {
-		.gfxData = gGfxPixAnimationChar14,
-		.frameData = gGfxSeqAnimationChar14,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 33,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation14"
 	},
 	[PERSON_ANIM_DUMMY13] = DUMMYPERSON,
 	[PERSON_ANIM_DUMMY14] = DUMMYPERSON,
 	[PERSON_ANIM_DUMMY15] = DUMMYPERSON,
 	[PERSON_ANIM_PENNY_NICHOLS] = {
-		.gfxData = gGfxPixAnimationChar16,
-		.frameData = gGfxSeqAnimationChar16,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 14,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation16"
 	},
 	[PERSON_ANIM_WENDY_OLDBAG] = {
-		.gfxData = gGfxPixAnimationChar15,
-		.frameData = gGfxSeqAnimationChar15,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 29,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation15"
 	},
 	[PERSON_ANIM_SAL_MANELLA] = {
-		.gfxData = gGfxPixAnimationChar18,
-		.frameData = gGfxSeqAnimationChar18,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 39,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation18"
 	},
 	[PERSON_ANIM_DUMMY19] = DUMMYPERSON,
 	[PERSON_ANIM_GUMSHOE] = {
-		.gfxData = gGfxPixAnimationChar07,
-		.frameData = gGfxSeqAnimationChar07,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 39,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation07"
 	},
 	[PERSON_ANIM_REDD_WHITE] = {
-		.gfxData = gGfxPixAnimationChar08,
-		.frameData = gGfxSeqAnimationChar08,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 36,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation08"
 	},
 	[PERSON_ANIM_APRIL_MAY] = {
-		.gfxData = gGfxPixAnimationChar09,
-		.frameData = gGfxSeqAnimationChar09,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 30,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation09"
 	},
 	[PERSON_ANIM_BELLBOY] = {
-		.gfxData = gGfxPixAnimationChar11,
-		.frameData = gGfxSeqAnimationChar11,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 35,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation11"
 	},
 	[PERSON_ANIM_DEE_VASQUEZ] = {
-		.gfxData = gGfxPixAnimationChar19,
-		.frameData = gGfxSeqAnimationChar19,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 29,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation19"
 	},
 	[PERSON_ANIM_LARRY_BUTZ] = {
 		.gfxData = gGfxPixAnimationChar12,
 		.frameData = gGfxSeqAnimationChar12,
 		.spriteCount = 39,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation12"
 	},
 	[PERSON_ANIM_FRANK_SAWHIT] = {
 		.gfxData = gGfxPixAnimationChar13,
 		.frameData = gGfxSeqAnimationChar13,
 		.spriteCount = 38,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation13"
 	},
 	[PERSON_ANIM_WILL_POWERS] = {
-		.gfxData = gGfxPixAnimationChar17,
-		.frameData = gGfxSeqAnimationChar17,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 39,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation17"
 	},
 	[PERSON_ANIM_CODY_HACKINS] = {
-		.gfxData = gGfxPixAnimationChar20,
-		.frameData = gGfxSeqAnimationChar20,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 18,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation20"
 	},
 	[PERSON_ANIM_BUSTUP_PHOENIX] = {
 		.gfxData = gGfxPixAnimationChar21,
 		.frameData = gGfxSeqAnimationChar21,
 		.spriteCount = 7,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation21"
 	},
 	[PERSON_ANIM_BUSTUP_EDGEWORTH] = {
 		.gfxData = gGfxPixAnimationChar22,
 		.frameData = gGfxSeqAnimationChar22,
 		.spriteCount = 10,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation22"
 	},
 	[PERSON_ANIM_LOTTA_HART] = {
-		.gfxData = gGfxPixAnimationChar23,
-		.frameData = gGfxSeqAnimationChar23,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 24,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation23"
 	},
 	[PERSON_ANIM_YANNI_YOGI] = {
-		.gfxData = gGfxPixAnimationChar24,
-		.frameData = gGfxSeqAnimationChar24,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 29,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation24"
 	},
 	[PERSON_ANIM_MANFRED_VONKARMA] = {
-		.gfxData = gGfxPixAnimationChar25,
-		.frameData = gGfxSeqAnimationChar25,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 36,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation25"
 	},
 	[PERSON_ANIM_POLLY] = {
-		.gfxData = gGfxPixAnimationChar26,
-		.frameData = gGfxSeqAnimationChar26,
+		.gfxData = NULL,
+		.frameData = NULL,
 		.spriteCount = 10,
 		.unkA = 0x0,
+        .folder = "animations/testing/characters/animation26"
 	},
 };
+
+
 
 const struct AnimationData gAnimationData[] = {
 	[0] = DUMMYANIMATION,
@@ -189,6 +219,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3D00,
 		.frameData = gGfxSeqAnimation14,
+		.file = "animations/testing/etc_2/308.yml",
 		.xOrigin = 45,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -200,6 +231,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3D00,
 		.frameData = gGfxSeqAnimation13,
+		.file = "animations/testing/etc_2/2D0.yml",
 		.xOrigin = 45,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -211,6 +243,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3D00,
 		.frameData = gGfxSeqAnimation13,
+		.file = "animations/testing/etc_2/2D0.yml",
 		.xOrigin = 190,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -222,6 +255,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3D00,
 		.frameData = gGfxSeqAnimation15,
+		.file = "animations/testing/etc_2/340.yml",
 		.xOrigin = 45,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -233,6 +267,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3400,
 		.frameData = gGfxSeqAnimation21,
+		.file = "animations/testing/etc_2/89C.yml",
 		.xOrigin = 60,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -244,6 +279,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3FC0,
 		.frameData = gGfxSeqAnimation22,
+		.file = "animations/testing/etc_2/8D4.yml",
 		.xOrigin = 260,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -255,6 +291,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x22E0,
 		.frameData = gGfxSeqAnimation26,
+		.file = "animations/testing/etc_2/B5C.yml",
 		.xOrigin = 80,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -266,6 +303,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x22E0,
 		.frameData = gGfxSeqAnimation26,
+		.file = "animations/testing/etc_2/B5C.yml",
 		.xOrigin = 220,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -277,6 +315,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x22E0,
 		.frameData = gGfxSeqAnimation26,
+		.file = "animations/testing/etc_2/B5C.yml",
 		.xOrigin = 360,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -288,6 +327,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3D00,
 		.frameData = gGfxSeqAnimation14,
+		.file = "animations/testing/etc_2/308.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -299,6 +339,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM0+0x3D00,
 		.frameData = gGfxSeqAnimation13,
+		.file = "animations/testing/etc_2/2D0.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -316,6 +357,7 @@ const struct AnimationData gAnimationData[] = {
 		.spriteCount = 1,
 		.priority = 34,
 		.flags = 0x0,
+        .file = "animations/testing/item/0.yml"
 	},
 	[13] = {
 		.gfxData = gGfxPixAnimationTileset01,
@@ -327,6 +369,7 @@ const struct AnimationData gAnimationData[] = {
 		.spriteCount = 1,
 		.priority = 34,
 		.flags = 0x0,
+        .file = "animations/testing/item/6C.yml"
 	},
 	[14] = {
 		.gfxData = gGfxPixAnimationTileset01,
@@ -338,6 +381,7 @@ const struct AnimationData gAnimationData[] = {
 		.spriteCount = 4,
 		.priority = 34,
 		.flags = 0x0,
+        .file = "animations/testing/item/8C.yml"
 	},
 	[15] = {
 		.gfxData = gGfxPixAnimationTileset01,
@@ -349,6 +393,7 @@ const struct AnimationData gAnimationData[] = {
 		.spriteCount = 2,
 		.priority = 34,
 		.flags = 0x0,
+        .file = "animations/testing/item/B8.yml"
 	},
 	[16] = {
 		.gfxData = gGfxPixAnimationTileset01,
@@ -360,11 +405,13 @@ const struct AnimationData gAnimationData[] = {
 		.spriteCount = 3,
 		.priority = 34,
 		.flags = 0x0,
+        .file = "animations/testing/item/DC.yml"
 	},
 	[17] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1000,
 		.frameData = gGfxSeqAnimation07,
+		.file = "animations/testing/etc_2/0.yml",
 		.xOrigin = 120,
 		.yOrigin = 60,
 		.paletteSlot = 6,
@@ -376,6 +423,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1000,
 		.frameData = gGfxSeqAnimation08,
+		.file = "animations/testing/etc_2/128.yml",
 		.xOrigin = 120,
 		.yOrigin = 60,
 		.paletteSlot = 6,
@@ -387,6 +435,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0C00,
 		.frameData = gGfxSeqAnimation09,
+		.file = "animations/testing/etc_2/250.yml",
 		.xOrigin = 0,
 		.yOrigin = 60,
 		.paletteSlot = 6,
@@ -398,6 +447,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0800,
 		.frameData = gGfxSeqAnimation10,
+		.file = "animations/testing/etc_2/270.yml",
 		.xOrigin = 240,
 		.yOrigin = 60,
 		.paletteSlot = 6,
@@ -409,6 +459,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0C00,
 		.frameData = gGfxSeqAnimation11,
+		.file = "animations/testing/etc_2/290.yml",
 		.xOrigin = 0,
 		.yOrigin = 60,
 		.paletteSlot = 6,
@@ -420,6 +471,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0800,
 		.frameData = gGfxSeqAnimation12,
+		.file = "animations/testing/etc_2/2B0.yml",
 		.xOrigin = 240,
 		.yOrigin = 60,
 		.paletteSlot = 6,
@@ -431,6 +483,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x2EC0,
 		.frameData = gGfxSeqAnimation16,
+		.file = "animations/testing/etc_2/378.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -442,6 +495,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x2EC0,
 		.frameData = gGfxSeqAnimation17,
+		.file = "animations/testing/etc_2/3A8.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -453,6 +507,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation18,
+		.file = "animations/testing/etc_2/3DC.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -464,6 +519,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation19,
+		.file = "animations/testing/etc_2/46C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -481,11 +537,13 @@ const struct AnimationData gAnimationData[] = {
 		.spriteCount = 12,
 		.priority = 34,
 		.flags = 0x0,
+        .file = "animations/testing/item/20.yml"
 	},
 	[28] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation20,
+		.file = "animations/testing/etc_2/55C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -497,6 +555,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x2800,
 		.frameData = gGfxSeqAnimation29,
+		.file = "animations/testing/etc_2/BF4.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -508,6 +567,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation30,
+		.file = "animations/testing/etc_2/CCC.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -519,6 +579,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation23,
+		.file = "animations/testing/etc_2/90C.yml",
 		.xOrigin = 120,
 		.yOrigin = 48,
 		.paletteSlot = 13,
@@ -530,6 +591,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation24,
+		.file = "animations/testing/etc_2/A20.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -541,6 +603,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation25,
+		.file = "animations/testing/etc_2/A88.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -552,6 +615,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1800,
 		.frameData = gGfxSeqAnimation27,
+		.file = "animations/testing/etc_2/B80.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -563,6 +627,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1A00,
 		.frameData = gGfxSeqAnimation28,
+		.file = "animations/testing/etc_2/BA0.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -574,6 +639,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1DA0,
 		.frameData = gGfxSeqAnimation31,
+		.file = "animations/testing/etc_2/D2C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 15,
@@ -585,6 +651,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1C80,
 		.frameData = gGfxSeqAnimation32,
+		.file = "animations/testing/etc_2/D68.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -596,6 +663,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0EE0,
 		.frameData = gGfxSeqAnimation33,
+		.file = "animations/testing/etc_2/D8C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -607,6 +675,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1120,
 		.frameData = gGfxSeqAnimation34,
+		.file = "animations/testing/etc_2/DC4.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -618,6 +687,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0A40,
 		.frameData = gGfxSeqAnimation35,
+		.file = "animations/testing/etc_2/DE8.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -629,6 +699,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1960,
 		.frameData = gGfxSeqAnimation36,
+		.file = "animations/testing/etc_2/E2C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -640,6 +711,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1720,
 		.frameData = gGfxSeqAnimation37,
+		.file = "animations/testing/etc_2/E98.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -651,6 +723,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x02A0,
 		.frameData = gGfxSeqAnimation38,
+		.file = "animations/testing/etc_2/F04.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -662,6 +735,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x04A0,
 		.frameData = gGfxSeqAnimation39,
+		.file = "animations/testing/etc_2/F40.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -673,6 +747,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0A60,
 		.frameData = gGfxSeqAnimation40,
+		.file = "animations/testing/etc_2/F7C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -684,6 +759,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x08C0,
 		.frameData = gGfxSeqAnimation41,
+		.file = "animations/testing/etc_2/FAC.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -695,6 +771,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1C20,
 		.frameData = gGfxSeqAnimation42,
+		.file = "animations/testing/etc_2/FD4.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -706,6 +783,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1CA0,
 		.frameData = gGfxSeqAnimation43,
+		.file = "animations/testing/etc_2/FF8.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 14,
@@ -717,6 +795,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1960,
 		.frameData = gGfxSeqAnimation36,
+		.file = "animations/testing/etc_2/E2C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -728,6 +807,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1720,
 		.frameData = gGfxSeqAnimation37,
+		.file = "animations/testing/etc_2/E98.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 12,
@@ -739,6 +819,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0400,
 		.frameData = gGfxSeqAnimation44,
+		.file = "animations/testing/etc_2/1028.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -750,6 +831,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0340,
 		.frameData = gGfxSeqAnimation45,
+		.file = "animations/testing/etc_2/1050.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -761,6 +843,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0140,
 		.frameData = gGfxSeqAnimation46,
+		.file = "animations/testing/etc_2/1078.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -772,6 +855,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x03E0,
 		.frameData = gGfxSeqAnimation47,
+		.file = "animations/testing/etc_2/10A8.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -783,6 +867,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x1BA0,
 		.frameData = gGfxSeqAnimation48,
+		.file = "animations/testing/etc_2/10FC.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 11,
@@ -794,6 +879,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0200,
 		.frameData = gGfxSeqAnimation49,
+		.file = "animations/testing/etc_2/111C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -805,6 +891,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0280,
 		.frameData = gGfxSeqAnimation50,
+		.file = "animations/testing/etc_2/1148.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -816,6 +903,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0280,
 		.frameData = gGfxSeqAnimation51,
+		.file = "animations/testing/etc_2/116C.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -827,6 +915,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0880,
 		.frameData = gGfxSeqAnimation52,
+		.file = "animations/testing/etc_2/1190.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 13,
@@ -838,6 +927,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x0300,
 		.frameData = gGfxSeqAnimation53,
+		.file = "animations/testing/etc_2/11BC.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -849,6 +939,7 @@ const struct AnimationData gAnimationData[] = {
 		.gfxData = gGfxPixAnimationTileset02,
 		.vramPtr = OBJ_VRAM1+0x02C0,
 		.frameData = gGfxSeqAnimation54,
+		.file = "animations/testing/etc_2/11EC.yml",
 		.xOrigin = 120,
 		.yOrigin = 80,
 		.paletteSlot = 10,
@@ -951,7 +1042,7 @@ const s8 gCourtScroll03AnimOffsets[31] = {
 	0x22, 0x00, 0x20, 0x00, 0x1e, 0x00, 0x1c, 0x00, 0x1b, 0x00, 0x1a, 0x00, 0x19, 0x00, 0x17
 };
 
-extern u16 gObjPaletteBuffer[16][16];
+u16 gObjPaletteBuffer[16][16];
 
 static struct AnimationListEntry * CreateAnimationFromAnimationInfo(struct AnimationInfo *animationFieldC, u32 arg1, u32 flags);
 static void UpdatePersonAnimationForCourtScroll(struct AnimationListEntry * animation);
@@ -989,7 +1080,8 @@ static void InitCurrentAnimationToNull()
 void ResetAnimationSystem()
 {
     struct AnimationListEntry *animation = gAnimation;
-    DmaFill16(3, 0, gAnimation, sizeof(gAnimation));
+    memset(gAnimation, 0, sizeof(gAnimation));
+    InitYMLAnim();
     gMain.animationFlags |= 3;
     animation = &gAnimation[1];
     animation->animationInfo.animId = 0xFF;
@@ -1034,10 +1126,11 @@ static struct AnimationListEntry *AllocateAnimationWithId(u32 animId)
     struct AnimationListEntry *animation = FindAnimationFromAnimId(animId);
     if (animation != NULL)
     {
+        //printf("allocation flags %08X\n", animation->flags);
         flags = (animation->flags & 0x02000000) ? 0x02000000 : flags;
         flags = (animation->flags & ANIM_INACTIVE) ? ANIM_INACTIVE : flags;
         DestroyAnimation(animation);
-        DmaFill16(3, 0, animation, 0x40)
+        memset(animation, 0, sizeof(*animation));
         animation->flags = (ANIM_PLAYING | ANIM_QUEUED_TILE_UPLOAD | ANIM_ACTIVE | ANIM_ALLOCATED | ANIM_QUEUED_PAL_UPLOAD) | flags;
         animation->frameDurationCounter = 0xffff;
         if (flags & ANIM_INACTIVE)
@@ -1054,7 +1147,7 @@ static struct AnimationListEntry *AllocateAnimationWithId(u32 animId)
             {
                 if (animation != &gAnimation[1])
                 {
-                    DmaFill16(3, 0, animation, 0x40)
+                    memset(animation, 0, sizeof(*animation));
                     animation->flags = (ANIM_PLAYING | ANIM_QUEUED_TILE_UPLOAD | ANIM_ACTIVE | ANIM_ALLOCATED | ANIM_QUEUED_PAL_UPLOAD);
                     animation->animationInfo.animId = animId;
                     return animation;
@@ -1202,7 +1295,7 @@ void SetAnimationFrameOffset(struct AnimationListEntry *animation, u32 animOffse
     if (animation->animationInfo.personId == 33 && animOffset == 6352)
         animOffset = 3280;
     */
-
+/*
     if (animation->animationInfo.animId == 0xFF)
     {
         u8 *framePtr;
@@ -1238,16 +1331,23 @@ void SetAnimationFrameOffset(struct AnimationListEntry *animation, u32 animOffse
             animation->animationInfo.animGfxDataStartPtr = gGfxPixAnimationTileset02;
         }
     }
-    animation->flags |= (ANIM_PLAYING | ANIM_QUEUED_TILE_UPLOAD);
-    animation->frameDurationCounter = 0xFFFF;
+    */
+    if(ChangeAnimation(animation, animOffset)) {
+        animation->flags |= (ANIM_PLAYING | ANIM_QUEUED_TILE_UPLOAD);
+        animation->frameDurationCounter = 0xFFFF;
+        animation->frameDataYml = animation->animationInfo.animation.frames;
+        animation->arrYml = getArrangement(&animation->animationInfo.animation, animation->frameDataYml->arrangement);
+    }
     // comments mostly based on h3rmit docs
     // animation->animFrameDataStartPtr animation block beginning
-    animFrameData = animation->animationInfo.animFrameDataStartPtr;
+    /*
     animGfxData = animation->animationInfo.animGfxDataStartPtr + 1 [(u32 *)animFrameData]; // offsets the graphics pointer
+    animFrameData = animation->animationInfo.animFrameDataStartPtr;
     animation->animationInfo.animGfxDataStartPtr = animGfxData;
     animation->animationInfo.tileDataPtr = animGfxData + 4 + (*(u32 *)animGfxData) * 0x20; // skip first u32(number of palettes) and the palettes, pointer to tiles
     animation->frameData = (struct AnimationFrame *)(animFrameData + 8); // skips animation block header, pointer to frame data
     animation->spriteData = animFrameData + animation->frameData->spriteDataOffset; // Frame tilemap pointer
+    */
 }
 
 #ifdef eUnknown_0200AFC0
@@ -1267,11 +1367,15 @@ u32 CheckRectCollisionWithAnim(struct Rect *p)
     u32 spriteSize = 0;
     struct AnimationListEntry * animation;
 
+    struct Rect r;
+    struct Rect c;
+    struct Rect s;
+
     for(animation = gAnimation[0].next; animation != NULL; animation = animation->next)
     {
-        struct Rect * rect = &eUnknown_0200AFC0[0];
-        struct Rect * collisionRect = &eUnknown_0200AFC0[1];
-        struct Rect * spriteRect = &eUnknown_0200AFC0[2];
+        struct Rect * rect = &r;
+        struct Rect * collisionRect = &c;
+        struct Rect * spriteRect = &s;
         uintptr_t vram;
         struct SpriteTemplate * spriteTemplate;
         u32 spriteCount;
@@ -1280,9 +1384,10 @@ u32 CheckRectCollisionWithAnim(struct Rect *p)
         rect->w += p->x;
         rect->h += p->y;
         
-        vram = (uintptr_t)animation->animationInfo.vramPtr;
-        spriteTemplate = animation->spriteData;
-        spriteCount = *(u16*)animation->spriteData;
+        //vram = (uintptr_t)animation->animationInfo.vramPtr;
+        //spriteTemplate = animation->spriteData;
+        //spriteCount = *(u16*)animation->spriteData;
+        spriteCount = 1;
         for(i = 0; i < spriteCount; i++)
         {
             struct SpriteSizeData * spriteSizePtr = (struct SpriteSizeData *)&spriteSize; // ! possible fakematch
@@ -1291,10 +1396,10 @@ u32 CheckRectCollisionWithAnim(struct Rect *p)
             *collisionRect = *rect;
             mask = 0xFFFF;
             vram += spriteSize & mask;    
-            *spriteSizePtr = gSpriteSizeTable[spriteTemplate->data >> 0xC];
-            spriteRect->x = spriteRect->w = animation->animationInfo.xOrigin + spriteTemplate->x;
+            spriteSizePtr = &gSpriteSizeTable[0xC];
+            spriteRect->x = spriteRect->w = animation->animationInfo.xOrigin;
             spriteRect->w += spriteSizePtr->width;
-            spriteRect->y = spriteRect->h = spriteTemplate->y + animation->animationInfo.yOrigin;
+            spriteRect->y = spriteRect->h = animation->animationInfo.yOrigin;
             spriteRect->h += spriteSizePtr->height;
 
             // Check if collision rect is in the region of the sprite rext 
@@ -1318,7 +1423,9 @@ u32 CheckRectCollisionWithAnim(struct Rect *p)
                 if(collisionRect->h > spriteRect->h)
                     collisionRect->h = spriteRect->h;
                 collisionRect->h -= spriteRect->y;
-
+                
+                return animation->animationInfo.animId;
+/*
                 // Check if any visible pixels are in the intersection
                 temp = spriteSizePtr->width / 8;
                 y = collisionRect->y;
@@ -1327,7 +1434,7 @@ u32 CheckRectCollisionWithAnim(struct Rect *p)
                     s32 yy1;
                     s32 yy2;
                     uintptr_t temp3;
-                    yy1 = (y >> 3) * temp * 32;
+                    yy1 = (y / 8) * temp * 32;
                     yy2 = (y % 8) * 4;
                     temp3 = yy1 + yy2 + vram;
                     x = collisionRect->x;
@@ -1349,6 +1456,7 @@ u32 CheckRectCollisionWithAnim(struct Rect *p)
                     }
                     y+=2;
                 }
+*/
             }
         }
     }
@@ -1460,7 +1568,7 @@ static void PutAnimationInAnimList(struct AnimationListEntry *animation)
     }
 }
 
-static void DoAnimationAction(u32 action)
+void DoAnimationAction(u32 action)
 {
     switch (action)
     {
@@ -1491,6 +1599,8 @@ struct AnimationListEntry *PlayPersonAnimation(u32 arg0, u32 arg1, u32 talkingAn
         xOrigin += DISPLAY_WIDTH;
     if (arg0 & 0x2000)
         arg1 |= 1;
+    //gAnimation[1].animationInfo.personId = arg0;
+        
     return PlayPersonAnimationAtCustomOrigin(arg0, talkingAnimOff, xOrigin, DISPLAY_HEIGHT/2, arg1);
 }
 
@@ -1498,7 +1608,7 @@ struct AnimationListEntry *PlayPersonAnimationAtCustomOrigin(u32 arg0, u32 talki
 {
     struct Main *main = &gMain;
     struct AnimationListEntry *animation = &gAnimation[1];
-    struct AnimationInfo animationInfo;
+    struct AnimationInfo animationInfo = {};
     u32 personId = arg0 & 0xFF;
     if (personId == 0)
     {
@@ -1506,6 +1616,8 @@ struct AnimationListEntry *PlayPersonAnimationAtCustomOrigin(u32 arg0, u32 talki
             DestroyAnimation(animation);
         return NULL;
     }
+    FreeAnimation(animation);
+    //printf("initial flags %08X\n", animation->flags);
     animationInfo.animId = 0xFF;
     *(u16 *)(&animationInfo.personId) = arg0; // this assignment matches but sucks. doing it like this allows unk2 to not be an array which makes everything else more sane
     animationInfo.vramPtr = OBJ_VRAM0 + 0x5800;
@@ -1519,20 +1631,26 @@ struct AnimationListEntry *PlayPersonAnimationAtCustomOrigin(u32 arg0, u32 talki
     animationInfo.priority = 0x21;
     animationInfo.xOrigin = xOrigin;
     animationInfo.yOrigin = yOrigin;
+    //printf("Before data load flags %08X\n", animation->flags);
+    LoadAnimDataIntoInfo(&animationInfo, gPersonAnimData[personId].folder, talkingAnimOff);
+    //printf("Before Allocation flags %08X\n", animation->flags);
     if (!(animation->flags & ANIM_ALLOCATED))
     {
-        DmaFill16(3, 0, animation, sizeof(gAnimation[1]));
-        animation->flags |= ANIM_ALLOCATED;
-        animation->animationInfo.animId = 0xFF;
+        u32 oldFlags = animation->flags; // ! Animations rely on this to do the fade in/out
+        *animation = (struct AnimationListEntry) {0};
+        animation->flags = oldFlags | ANIM_ALLOCATED;
+        animation->animationInfo.animId = 0xFF; 
         PutAnimationInAnimList(animation);
     }
     animation->bgId |= 0;
+    //printf("Before creation flags %08X\n", animation->flags);
     CreateAnimationFromAnimationInfo(&animationInfo, 0xFF, flags);
+    //printf("after creation flags %08X\n", animation->flags);
     animation->bgId = main->currentBG;
     if (animation->animationInfo.personId == 0x16 && main->process[GAME_PROCESS] == INVESTIGATION_PROCESS) // April May special case
     {
         struct AnimationListEntry *ptr;
-        u32 var0 = animation->flags & 0x02000000;
+        u32 var0 = animation->flags & ANIM_BLEND_ACTIVE;
         switch (talkingAnimOff)
         {
         case ANIM_MAY_ANGRY_TALKING_WITNESS:
@@ -1575,7 +1693,7 @@ struct AnimationListEntry *PlayAnimation(u32 arg0)
 struct AnimationListEntry *PlayAnimationAtCustomOrigin(u32 arg0, s32 xOrigin, s32 yOrigin)
 {
     struct AnimationListEntry *animationStruct;
-    struct AnimationInfo animationInfo;
+    struct AnimationInfo animationInfo = {};
     struct Main *main = &gMain;
     const struct AnimationData *animData = &gAnimationData[arg0];
     u32 var0;
@@ -1591,7 +1709,9 @@ struct AnimationListEntry *PlayAnimationAtCustomOrigin(u32 arg0, s32 xOrigin, s3
     animationInfo.priority = animData->priority;
     animationInfo.xOrigin = xOrigin;
     animationInfo.yOrigin = yOrigin;
+    LoadAnimDataFileIntoInfo(&animationInfo, animData->file);
     animationStruct = CreateAnimationFromAnimationInfo(&animationInfo, arg0, animData->flags);
+    /*
     var0 = animationStruct->animationInfo.paletteSlot - 6;
     var1 = (1 << var0);
     if (!(main->allocatedObjPltts & var1) && animationStruct->animationInfo.paletteSlot < 10)
@@ -1600,17 +1720,18 @@ struct AnimationListEntry *PlayAnimationAtCustomOrigin(u32 arg0, s32 xOrigin, s3
         u32 size;
 		
         main->allocatedObjPltts |= var1;
-        var1 = OBJ_PLTT;
+        var1 = (uintptr_t)OBJ_PLTT;
         var1 += animationStruct->animationInfo.paletteSlot * 0x20;
         dest = gObjPaletteBuffer[var0];
         var0 = *(u32 *)animationStruct->animationInfo.animGfxDataStartPtr;
         size = var0 * 0x20;
-        DmaCopy16(3, var1, dest, size);
+        DmaCopy16(3, (void*)var1, dest, size);
     }
+    */
     animationStruct->bgId = main->currentBG;
     animationStruct->roomId = main->currentRoomId;
     animationStruct->flags |= ANIM_QUEUED_PAL_UPLOAD;
-    return animationStruct;
+    return NULL;
 }
 
 struct AnimationBackupStruct * RestoreAnimationsFromBuffer(struct AnimationBackupStruct * backupAnimation) // ! UB: this function doesn't return anything
@@ -1688,13 +1809,18 @@ static struct AnimationListEntry * CreateAnimationFromAnimationInfo(struct Anima
 		DebugPrintStr("OBJ PULL ERROR!", 0, 5);
         return NULL;
 	}
-    DmaCopy16(3, animationInfo, &animation->animationInfo, sizeof(animation->animationInfo));
-    animFrameData = animation->animationInfo.animFrameDataStartPtr;
-    animGfxData = animation->animationInfo.animGfxDataStartPtr +  1 [(u32 *)animFrameData];
-    animation->animationInfo.animGfxDataStartPtr = animGfxData;                                      // offsets the graphics pointer
-    animation->animationInfo.tileDataPtr = animGfxData + 4 + (*(u32 *)animGfxData) * 0x20; // skip first u32(number of palettes) and the palettes, pointer to tiles
-    animation->frameData = (struct AnimationFrame *)(animFrameData + 8);                                  // skips animation block header, pointer to frame data
-    animation->spriteData = (void *)(animFrameData + animation->frameData->spriteDataOffset);                  // Frame tilemap pointer
+    //DmaCopy16(3, animationInfo, &animation->animationInfo, sizeof(animation->animationInfo));
+    animation->animationInfo = *animationInfo;
+    //animFrameData = animation->animationInfo.animFrameDataStartPtr;
+    //animGfxData = animation->animationInfo.animGfxDataStartPtr +  1 [(u32 *)animFrameData];
+    //animation->animationInfo.animGfxDataStartPtr = animGfxData;                                      // offsets the graphics pointer
+    //animation->animationInfo.tileDataPtr = animGfxData + 4 + (*(u32 *)animGfxData) * 0x20; // skip first u32(number of palettes) and the palettes, pointer to tiles
+    //animation->frameData = (struct AnimationFrame *)(animFrameData + 8);                                  // skips animation block header, pointer to frame data
+    //animation->spriteData = (void *)(animFrameData + animation->frameData->spriteDataOffset);                  // Frame tilemap pointer
+    if(animation->animationInfo.animation.frames != NULL && animation->animationInfo.animation.arrangements != NULL) {        
+        animation->frameDataYml = animation->animationInfo.animation.frames;
+        animation->arrYml = getArrangement(&animation->animationInfo.animation, animation->frameDataYml->arrangement);
+    }
     animation->flags |= flags;
     if (flags & 0x10)
         animation->flags &= ~ANIM_PLAYING;
@@ -1703,11 +1829,14 @@ static struct AnimationListEntry * CreateAnimationFromAnimationInfo(struct Anima
     animation->spritePriorityMatrixIndex = 0x300;
     SetAnimationPriority(animation, animation->animationInfo.priority >> 4);
     animation->animationInfo.priority &= 0xF;
+    animation->paletteShader = LoadShader("shader/base.vs", "shader/palette_switch.fs");
     PutAnimationInAnimList(animation);
+   /*
     if (animation->frameData->flags & 0x2)
         PlaySE(animation->frameData->songId);
     if (animation->frameData->flags & 0x4)
         DoAnimationAction(animation->frameData->action);
+   */
     return animation;
 }
 
@@ -1715,6 +1844,7 @@ static u32 AdvanceAnimationFrame(struct AnimationListEntry * animation)
 {
     void * gfxDataStart;
     u32 retVal = 4;
+    return 4; // STUB
     if (gScriptContext.personAnimPauseCounter && animation->animationInfo.animId == 0xFF)
         return retVal;
     if (animation->frameData->frameDuration > ++animation->frameDurationCounter)
@@ -1790,6 +1920,7 @@ void StartAnimationBlend(u32 arg0, u32 arg1)
     struct AnimationListEntry *animation2;
     struct IORegisters *ioRegsp = &gIORegisters;
     struct Main *main = &gMain;
+    //printf("StartAnimationBlend\n");
     if (arg0 & 0xFF00)
     {
         u32 animationId = arg0 >> 8;
@@ -1808,10 +1939,10 @@ void StartAnimationBlend(u32 arg0, u32 arg1)
         if (animation == NULL)
             animation = FindAnimationFromAnimId(ANIM_APRIL_MAY_ABDOMEN_2);
     }
-
+    //printf("Setting Blend Mode\n");
     if (arg0 & 1)
     {
-        if ((animation2->flags & 0x02000000) && !(animation2->flags & 0x4))
+        if ((animation2->flags & ANIM_BLEND_ACTIVE) && !(animation2->flags & 0x4))
             return;
         animation2->flags &= ~(ANIM_INACTIVE | 0x04000000 | 4);
         if (animation != NULL)
@@ -1820,7 +1951,7 @@ void StartAnimationBlend(u32 arg0, u32 arg1)
     }
     else if (arg0 & 4)
     {
-        if ((animation2->flags & 0x02000000) && (animation2->flags & 0x4))
+        if ((animation2->flags & ANIM_BLEND_ACTIVE) && (animation2->flags & 0x4))
             return;
         animation2->flags |= 0x4;
         if (animation != NULL)
@@ -1840,10 +1971,11 @@ void StartAnimationBlend(u32 arg0, u32 arg1)
         animation->flags |= (ANIM_ACTIVE | ANIM_BLEND_ACTIVE);
     main->blendDelay = arg1;
     main->blendCounter = 0;
+    //printf("Animation Blend started %d\n", animation2->flags);
     ioRegsp->lcd_bldcnt = BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG3;
     ioRegsp->lcd_bldalpha = BLDALPHA_BLEND(0x10 - main->blendDeltaY, main->blendDeltaY);
-    REG_BLDCNT = ioRegsp->lcd_bldcnt;
-    REG_BLDALPHA = ioRegsp->lcd_bldalpha;
+    //REG_BLDCNT = ioRegsp->lcd_bldcnt;
+    //REG_BLDALPHA = ioRegsp->lcd_bldalpha;
 }
 
 static void UpdateAnimationBlend(struct AnimationListEntry *animation)
@@ -1853,6 +1985,7 @@ static void UpdateAnimationBlend(struct AnimationListEntry *animation)
     struct AnimationListEntry *animation2 = NULL;
     if (main->blendMode)
     {
+        //printf("but why\n");
         animation->flags &= ~ANIM_BLEND_ACTIVE;
         return;
     }
@@ -1902,6 +2035,7 @@ static void UpdateAnimationBlend(struct AnimationListEntry *animation)
             }
         }
     }
+    //printf("%d\n", main->blendDeltaY);
     ioRegsp->lcd_bldalpha = BLDALPHA_BLEND(0x10 - main->blendDeltaY, main->blendDeltaY);
 }
 
@@ -1937,18 +2071,26 @@ void DestroyAnimation(struct AnimationListEntry *animation)
         if (animation2 != NULL)
             DestroyAnimation(animation2);
     }
+
     if (animation->flags & ANIM_ALLOCATED)
     {
         void *dst;
         u32 size;
-        for (oam = &gOamObjects[animation->animtionOamStartIdx]; oam < &gOamObjects[animation->animtionOamEndIdx]; oam++)
-            oam->attr0 = SPRITE_ATTR0_CLEAR;
+        FreeAnimation(animation);
+        //for (oam = &gOamObjects[animation->animtionOamStartIdx]; oam < &gOamObjects[animation->animtionOamEndIdx]; oam++)
+        //    oam->attr0 = SPRITE_ATTR0_CLEAR;
         main->animationFlags |= 4;
         animation->flags = 0;
         animation->prev->next = animation->next;
-        animation->next->prev = animation->prev;
+        if(animation->next != NULL)
+            animation->next->prev = animation->prev;
+        if(IsShaderValid(animation->paletteShader))
+            UnloadShader(animation->paletteShader);
+        animation->paletteShader = (Shader){0};
+        /*
         if (animation->animationInfo.animId == 0xFF)
             return;
+        
         if (animation->animationInfo.paletteSlot > 9)
             return;
         var0 = animation->animationInfo.paletteSlot - 6;
@@ -1958,7 +2100,8 @@ void DestroyAnimation(struct AnimationListEntry *animation)
         dst = (void*)OBJ_PLTT;
         dst += animation->animationInfo.paletteSlot * 0x20;
         size = *(u32 *)animation->animationInfo.animGfxDataStartPtr * 0x20;
-        DmaCopy16(3, var1, dst, size);
+        DmaCopy16(3, (void*)var1, dst, size);
+        */
     }
 }
 
@@ -2117,10 +2260,10 @@ void MoveAnimationTilesToRam(bool32 arg0)
             u32 palOffset = animation->animationInfo.paletteSlot & 0xF;
 
             palOffset *= 32;
-            dest = OBJ_PLTT + palOffset;
+            dest = (uintptr_t)OBJ_PLTT + palOffset;
             palCount *= 32;
             tileData = animation->animationInfo.animGfxDataStartPtr+4;
-            DmaCopy16(3, tileData, dest, palCount);
+            DmaCopy16(3, tileData, (void*)dest, palCount);
             animation->flags &= ~ANIM_QUEUED_PAL_UPLOAD;
         }
     }
@@ -2131,11 +2274,22 @@ void MoveAnimationTilesToRam(bool32 arg0)
 	}
 }
 
+/*
+void AdvanceAnimationYaml(struct AnimationListEntry * anim) {
+    
+}
+
+void DrawAnimationYaml(struct AnimationListEntry * anim) {
+    
+}
+*/
+
 void UpdateAnimations(u32 arg0)
 {
     struct Main * main = &gMain;
     struct AnimationListEntry *animation2 = gAnimation;
     struct CourtScroll * courtScroll = &gCourtScroll;
+
     if(main->animationFlags & 1)
     {
         struct AnimationListEntry *animation;
@@ -2178,6 +2332,7 @@ void UpdateAnimations(u32 arg0)
             }
             if(animation->flags & ANIM_BLEND_ACTIVE)
             {
+                //printf("HELLO ??? %d\n", animation->animationInfo.animId);
                 if(!(animation->animationInfo.animId <= 24 && animation->animationInfo.animId >= 17))
                     UpdateAnimationBlend(animation);
                 continue;
@@ -2186,7 +2341,10 @@ void UpdateAnimations(u32 arg0)
             {
                 if(main->blendMode == 0)
                 {
-                    if(AdvanceAnimationFrame(animation) == 0)
+                    //if(AdvanceAnimationFrame(animation) == 0)
+                    //    continue;
+                    /* --- AdvanceAnimation Frame --- */
+                    if(AdvanceAnimationYaml(animation) == 0)
                         continue;
                 }
             }
@@ -2202,9 +2360,10 @@ void UpdateAnimations(u32 arg0)
     if(main->animationFlags & 0x4)
     {
         main->animationFlags &= ~0x4;
-        ClearAllAnimationSprites();
+        //ClearAllAnimationSprites();
     }
-    UpdateAllAnimationSprites();
+    DrawAnimationYaml();
+    //UpdateAllAnimationSprites();
 }
 
 void ScrollMode2AnimationUpdate(struct AnimationListEntry * animation, struct CourtScroll * courtScroll)
@@ -3063,31 +3222,31 @@ struct DebugAnimData gDebugAnimData[] = {
 	{ gGfxPixAnimationTileset01, gGfxSeqAnimation01, 12, 0, 0, 0, "ITEM", gDebugAnimITEMData },
 	{ gGfxPixAnimationTileset02, gGfxSeqAnimation07, 15, 0, 0, 0, "ETC ", gDebugAnimETCData },
 	{ gGfxPixAnimationChar01, gGfxSeqAnimationChar01, 37, PERSON_ANIM_PHOENIX, 0, 0, "PL00", gDebugAnimPL00Data },
-	{ gGfxPixAnimationChar02, gGfxSeqAnimationChar02, 28, PERSON_ANIM_MAYA, 0, 0, "PL01", gDebugAnimPL01Data },
-	{ gGfxPixAnimationChar03, gGfxSeqAnimationChar03, 28, PERSON_ANIM_SUMMONED_MIA, 0, 0, "PL02", gDebugAnimPL02Data },
+	//{ gGfxPixAnimationChar02, gGfxSeqAnimationChar02, 28, PERSON_ANIM_MAYA, 0, 0, "PL01", gDebugAnimPL01Data },
+	//{ gGfxPixAnimationChar03, gGfxSeqAnimationChar03, 28, PERSON_ANIM_SUMMONED_MIA, 0, 0, "PL02", gDebugAnimPL02Data },
 	{ gGfxPixAnimationChar04, gGfxSeqAnimationChar04, 28, PERSON_ANIM_MIA, 0, 0, "PL03", gDebugAnimPL03Data },
 	{ gGfxPixAnimationChar05, gGfxSeqAnimationChar05, 19, PERSON_ANIM_JUDGE, 0, 0, "PL04", gDebugAnimPL04Data },
-	{ gGfxPixAnimationChar06, gGfxSeqAnimationChar06, 38, PERSON_ANIM_EDGEWORTH, 0, 0, "PL05", gDebugAnimPL05Data },
-	{ gGfxPixAnimationChar07, gGfxSeqAnimationChar07, 38, PERSON_ANIM_GUMSHOE, 0, 0, "PL06", gDebugAnimPL06Data },
-	{ gGfxPixAnimationChar08, gGfxSeqAnimationChar08, 36, PERSON_ANIM_REDD_WHITE, 0, 0, "PL07", gDebugAnimPL07Data },
-	{ gGfxPixAnimationChar09, gGfxSeqAnimationChar09, 30, PERSON_ANIM_APRIL_MAY, 0, 0, "PL08", gDebugAnimPL08Data },
+	//{ gGfxPixAnimationChar06, gGfxSeqAnimationChar06, 38, PERSON_ANIM_EDGEWORTH, 0, 0, "PL05", gDebugAnimPL05Data },
+	//{ gGfxPixAnimationChar07, gGfxSeqAnimationChar07, 38, PERSON_ANIM_GUMSHOE, 0, 0, "PL06", gDebugAnimPL06Data },
+	//{ gGfxPixAnimationChar08, gGfxSeqAnimationChar08, 36, PERSON_ANIM_REDD_WHITE, 0, 0, "PL07", gDebugAnimPL07Data },
+	//{ gGfxPixAnimationChar09, gGfxSeqAnimationChar09, 30, PERSON_ANIM_APRIL_MAY, 0, 0, "PL08", gDebugAnimPL08Data },
 	{ gGfxPixAnimationChar10, gGfxSeqAnimationChar10, 23, PERSON_ANIM_WINSTON_PAYNE, 0, 0, "PL09", gDebugAnimPL09Data },
-	{ gGfxPixAnimationChar11, gGfxSeqAnimationChar11, 35, PERSON_ANIM_BELLBOY, 0, 0, "PL0A", gDebugAnimPL0AData },
+	//{ gGfxPixAnimationChar11, gGfxSeqAnimationChar11, 35, PERSON_ANIM_BELLBOY, 0, 0, "PL0A", gDebugAnimPL0AData },
 	{ gGfxPixAnimationChar12, gGfxSeqAnimationChar12, 39, PERSON_ANIM_LARRY_BUTZ, 0, 0, "PL0B", gDebugAnimPL0BData },
 	{ gGfxPixAnimationChar13, gGfxSeqAnimationChar13, 38, PERSON_ANIM_FRANK_SAWHIT, 0, 0, "PL0C", gDebugAnimPL0CData },
-	{ gGfxPixAnimationChar14, gGfxSeqAnimationChar14, 33, PERSON_ANIM_MARVIN_GROSSBERG, 0, 0, "PL0D", gDebugAnimPL0DData },
-	{ gGfxPixAnimationChar15, gGfxSeqAnimationChar15, 29, PERSON_ANIM_WENDY_OLDBAG, 0, 0, "PL0E", gDebugAnimPL0EData },
-	{ gGfxPixAnimationChar16, gGfxSeqAnimationChar16, 14, PERSON_ANIM_PENNY_NICHOLS, 0, 0, "PL0F", gDebugAnimPL0FData },
-	{ gGfxPixAnimationChar17, gGfxSeqAnimationChar17, 39, PERSON_ANIM_WILL_POWERS, 0, 0, "PL10", gDebugAnimPL10Data },
-	{ gGfxPixAnimationChar18, gGfxSeqAnimationChar18, 39, PERSON_ANIM_SAL_MANELLA, 0, 0, "PL11", gDebugAnimPL11Data },
-	{ gGfxPixAnimationChar19, gGfxSeqAnimationChar19, 29, PERSON_ANIM_DEE_VASQUEZ, 0, 0, "PL12", gDebugAnimPL12Data },
-	{ gGfxPixAnimationChar20, gGfxSeqAnimationChar20, 18, PERSON_ANIM_CODY_HACKINS, 0, 0, "PL13", gDebugAnimPL13Data },
+	//{ gGfxPixAnimationChar14, gGfxSeqAnimationChar14, 33, PERSON_ANIM_MARVIN_GROSSBERG, 0, 0, "PL0D", gDebugAnimPL0DData },
+	//{ gGfxPixAnimationChar15, gGfxSeqAnimationChar15, 29, PERSON_ANIM_WENDY_OLDBAG, 0, 0, "PL0E", gDebugAnimPL0EData },
+	//{ gGfxPixAnimationChar16, gGfxSeqAnimationChar16, 14, PERSON_ANIM_PENNY_NICHOLS, 0, 0, "PL0F", gDebugAnimPL0FData },
+	//{ gGfxPixAnimationChar17, gGfxSeqAnimationChar17, 39, PERSON_ANIM_WILL_POWERS, 0, 0, "PL10", gDebugAnimPL10Data },
+	//{ gGfxPixAnimationChar18, gGfxSeqAnimationChar18, 39, PERSON_ANIM_SAL_MANELLA, 0, 0, "PL11", gDebugAnimPL11Data },
+	//{ gGfxPixAnimationChar19, gGfxSeqAnimationChar19, 29, PERSON_ANIM_DEE_VASQUEZ, 0, 0, "PL12", gDebugAnimPL12Data },
+	//{ gGfxPixAnimationChar20, gGfxSeqAnimationChar20, 18, PERSON_ANIM_CODY_HACKINS, 0, 0, "PL13", gDebugAnimPL13Data },
 	{ gGfxPixAnimationChar21, gGfxSeqAnimationChar21, 7,  PERSON_ANIM_BUSTUP_PHOENIX, 0, 0, "PL14", gDebugAnimPL14Data },
 	{ gGfxPixAnimationChar22, gGfxSeqAnimationChar22, 10, PERSON_ANIM_BUSTUP_EDGEWORTH, 0, 0, "PL15", gDebugAnimPL15Data },
-	{ gGfxPixAnimationChar23, gGfxSeqAnimationChar23, 24, PERSON_ANIM_LOTTA_HART, 0, 0, "PL16", gDebugAnimPL16Data },
-	{ gGfxPixAnimationChar24, gGfxSeqAnimationChar24, 29, PERSON_ANIM_YANNI_YOGI, 0, 0, "PL17", gDebugAnimPL17Data },
-	{ gGfxPixAnimationChar25, gGfxSeqAnimationChar25, 36, PERSON_ANIM_MANFRED_VONKARMA, 0, 0, "PL18", gDebugAnimPL18Data },
-	{ gGfxPixAnimationChar26, gGfxSeqAnimationChar26, 10, PERSON_ANIM_POLLY, 0, 0, "PL19", gDebugAnimPL19Data }
+	//{ gGfxPixAnimationChar23, gGfxSeqAnimationChar23, 24, PERSON_ANIM_LOTTA_HART, 0, 0, "PL16", gDebugAnimPL16Data },
+	//{ gGfxPixAnimationChar24, gGfxSeqAnimationChar24, 29, PERSON_ANIM_YANNI_YOGI, 0, 0, "PL17", gDebugAnimPL17Data },
+	//{ gGfxPixAnimationChar25, gGfxSeqAnimationChar25, 36, PERSON_ANIM_MANFRED_VONKARMA, 0, 0, "PL18", gDebugAnimPL18Data },
+	//{ gGfxPixAnimationChar26, gGfxSeqAnimationChar26, 10, PERSON_ANIM_POLLY, 0, 0, "PL19", gDebugAnimPL19Data }
 };
 
 void sub_10009850(struct AnimationDebug *debugCtx) // ! should take a normal debugcontext
@@ -3191,7 +3350,7 @@ void sub_10009850(struct AnimationDebug *debugCtx) // ! should take a normal deb
   animation->spriteData = (void *)(animFrameDataStartPtr + animation->frameData->spriteDataOffset);
   animation->tileNum = (uintptr_t)animation->animationInfo.vramPtr >> 5;
   animation->spritePriorityMatrixIndex = 0x200; // ! does a u8 store
-  DmaCopy16(3, v31 + 4, (32 * ((paletteSlot & 0xF) - 64487408)), v29);
+  DmaCopy16(3, v31 + 4, (void*)(32 * ((paletteSlot & 0xF) - 64487408)), v29);
   PutAnimationInAnimList(animation);
 }
 

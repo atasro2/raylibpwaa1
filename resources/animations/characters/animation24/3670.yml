@@ -1,0 +1,20 @@
+sheet: sheet-E948
+arrangements:
+  '24':
+  - part: 55
+    x: 112
+    y: 72
+  '32':
+frames:
+- duration: 5
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24
+- duration: 255
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 24

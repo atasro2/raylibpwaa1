@@ -1,12 +1,11 @@
 #include "global.h"
 #include "sound.h"
 #include "debug.h"
-#include "m4a.h"
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
-extern struct MusicPlayerInfo gMPlayInfo_SE1;
-extern struct MusicPlayerInfo gMPlayInfo_SE2;
-extern struct MusicPlayerInfo gMPlayInfo_SE3;
+//extern struct MusicPlayerInfo gMPlayInfo_BGM;
+//extern struct MusicPlayerInfo gMPlayInfo_SE1;
+//extern struct MusicPlayerInfo gMPlayInfo_SE2;
+//extern struct MusicPlayerInfo gMPlayInfo_SE3;
 
 void ResetSoundControl() // Bgm_init
 {
@@ -23,7 +22,7 @@ void PlaySE(u32 songNum) // Se_play?
     struct Main * main = &gMain;
     if(!(main->soundFlags & SOUND_FLAG_DISABLE_SE))
     {
-        m4aSongNumStart(songNum);
+        //m4aSongNumStart(songNum);
     }
 }
 
@@ -34,11 +33,11 @@ void PlayBGM(u32 songNum) // Bgm_play
     {
         if((main->soundStatus & SOUND_STATUS_BGM_FADING_OUT))
         {
-            m4aSongNumStart(songNum);
+            //m4aSongNumStart(songNum);
         }
         else
         {
-            m4aSongNumStartOrChange(songNum);
+            //m4aSongNumStartOrChange(songNum);
         }
         main->currentPlayingBgm = songNum;
         main->bgmVolume = 0x100 * 10;
@@ -51,13 +50,13 @@ void PauseBGM() // Bgm_pause
     struct Main * main = &gMain;
     if(main->soundStatus & SOUND_STATUS_BGM_PLAYING)
     {
-        m4aMPlayStop(&gMPlayInfo_BGM);
+        //m4aMPlayStop(&gMPlayInfo_BGM);
         main->soundStatus &= ~SOUND_STATUS_BGM_PLAYING;
         main->soundStatus |= SOUND_STATUS_BGM_PAUSED;
         if(main->soundStatus & SOUND_STATUS_BGM_FADING_OUT)
         {
             main->soundStatus |= SOUND_STATUS_BGM_STOPPED;
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 4);
+            //m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 4);
         }
     }
     else
@@ -71,7 +70,7 @@ void StopBGM(void) // Bgm_stop
     struct Main * main = &gMain;
     if((main->soundStatus & SOUND_STATUS_BGM_STOPPED) == 0)
     {
-        m4aMPlayStop(&gMPlayInfo_BGM);
+        //m4aMPlayStop(&gMPlayInfo_BGM);
         main->soundStatus = SOUND_STATUS_BGM_STOPPED;
         main->currentPlayingBgm = 0xFF;
     }
@@ -84,7 +83,7 @@ void UnpauseBGM(void) // Bgm_continue
     {
         if((main->soundStatus & SOUND_STATUS_BGM_STOPPED) == 0)
         {
-            m4aMPlayContinue(&gMPlayInfo_BGM);
+            //m4aMPlayContinue(&gMPlayInfo_BGM);
             main->soundStatus &= ~SOUND_STATUS_BGM_PAUSED;
             main->soundStatus |= SOUND_STATUS_BGM_PLAYING;
         }
@@ -100,7 +99,7 @@ void FadeOutBGM(u32 fadeTime) // Bgm_fadeout
     struct Main * main = &gMain;
     if(main->soundStatus & SOUND_STATUS_BGM_PLAYING)
     {
-        m4aMPlayFadeOutTemporarily(&gMPlayInfo_BGM, fadeTime/16);
+        //m4aMPlayFadeOutTemporarily(&gMPlayInfo_BGM, fadeTime/16);
         main->soundStatus = SOUND_STATUS_BGM_FADING_OUT | SOUND_STATUS_BGM_PLAYING;
     }
 }
@@ -115,9 +114,9 @@ void FadeInBGM(u32 fadeTime, u32 songNum) // Bgm_fadein
             if(main->soundStatus & SOUND_STATUS_BGM_PAUSED)
             {
                 main->soundStatus &= ~(SOUND_STATUS_BGM_FADING_OUT | SOUND_STATUS_BGM_STOPPED);
-                m4aSongNumStart(songNum);
-                m4aMPlayImmInit(&gMPlayInfo_BGM);
-                m4aMPlayStop(&gMPlayInfo_BGM);
+                //m4aSongNumStart(songNum);
+                //m4aMPlayImmInit(&gMPlayInfo_BGM);
+                //m4aMPlayStop(&gMPlayInfo_BGM);
                 return;
             }
             return;
@@ -142,7 +141,7 @@ void FadeInBGM(u32 fadeTime, u32 songNum) // Bgm_fadein
                 {
                     if(main->soundStatus & SOUND_STATUS_BGM_FADING_OUT)
                     {
-                        m4aMPlayFadeIn(&gMPlayInfo_BGM, fadeTime/16);
+                        //m4aMPlayFadeIn(&gMPlayInfo_BGM, fadeTime/16);
                         main->soundStatus = SOUND_STATUS_BGM_PLAYING;
                         return;
                     }
@@ -155,7 +154,7 @@ void FadeInBGM(u32 fadeTime, u32 songNum) // Bgm_fadein
             else
             {
                 PlayBGM(songNum);
-                m4aMPlayImmInit(&gMPlayInfo_BGM);
+                //m4aMPlayImmInit(&gMPlayInfo_BGM);
             }
         }
         if(fadeTime == 0)
@@ -194,15 +193,15 @@ void UpdateBGMFade() // Bgm_fade_main
                     main->soundStatus = SOUND_STATUS_BGM_PLAYING;
                 }
             }
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, (main->bgmVolume / 10) & 0x1FC);
+            //m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, (main->bgmVolume / 10) & 0x1FC);
             return;
         }
         else
         {
-            if(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE)
-            {
-                main->soundStatus = SOUND_STATUS_BGM_PAUSED;
-            }
+            //if(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE)
+            //{
+            //    main->soundStatus = SOUND_STATUS_BGM_PAUSED;
+            //}
         }
     }
 }
@@ -215,13 +214,13 @@ void ChangeTrackVolume(u32 track, u32 volume) // unused
         
     if(track & 1)
     {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, volume & 0x1FC);
+        //m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, volume & 0x1FC);
         gMain.bgmVolume = volume * 10;
     }
     if(track & 2)
-        m4aMPlayVolumeControl(&gMPlayInfo_SE1, 0xFFFF, volume & 0x1FC);
+        ;//m4aMPlayVolumeControl(&gMPlayInfo_SE1, 0xFFFF, volume & 0x1FC);
     if(track & 4)
-        m4aMPlayVolumeControl(&gMPlayInfo_SE2, 0xFFFF, volume & 0x1FC);
+        ;//m4aMPlayVolumeControl(&gMPlayInfo_SE2, 0xFFFF, volume & 0x1FC);
 }
 
 void SetBGMVolume(u32 volume, s32 fadeTime) // Bgm_volume_set
@@ -245,7 +244,7 @@ void SetBGMVolume(u32 volume, s32 fadeTime) // Bgm_volume_set
         }
         else
         {
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, volume & 0x1FC);
+            //m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, volume & 0x1FC);
             main->bgmVolume = volume * 10;        
         }
     }
@@ -256,15 +255,15 @@ void ChangeTrackPanning(u32 track, u32 pan) // unused
 {
     if(track & 1)
     {
-        m4aMPlayPanpotControl(&gMPlayInfo_BGM, 0xFFFF, pan);
+        //m4aMPlayPanpotControl(&gMPlayInfo_BGM, 0xFFFF, pan);
     }
     if(track & 2)
     {
-        m4aMPlayPanpotControl(&gMPlayInfo_SE1, 0xFFFF, pan);
+        //m4aMPlayPanpotControl(&gMPlayInfo_SE1, 0xFFFF, pan);
     }
     if(track & 4)
     {
-        m4aMPlayPanpotControl(&gMPlayInfo_SE2, 0xFFFF, pan);
+        //m4aMPlayPanpotControl(&gMPlayInfo_SE2, 0xFFFF, pan);
     }
 }
 
@@ -342,7 +341,7 @@ void sub_8011714(struct DebugContext *ctx) {
 				if (sound->unk0 != sound->unk2) {
 					FadeOutBGM(120);
 					++ctx->unk1;
-		        } else if (gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE) {
+		        } /*else if (gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE) {
 					if (gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_TRACK) {
 						UnpauseBGM();
 					} else {
@@ -351,7 +350,7 @@ void sub_8011714(struct DebugContext *ctx) {
 						ChangeTrackVolume(1, sound->unk8);
 						ChangeTrackPanning(1, sound->unkC);
 					}
-				} else {
+				}*/ else {
 					PauseBGM();
 				}
 			} else if (gJoypad.pressedKeys & L_BUTTON) {
@@ -366,12 +365,14 @@ void sub_8011714(struct DebugContext *ctx) {
 			DebugPrintStr("<-  SELECT", 11, 12);
 			DebugPrintStr("->  SELECT", 11, 13);
 			DebugPrintStr("B   +10   ", 11, 15);
+            /*
 			if (!(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE) && sound->unk0 == sound->unk2) {
 				DebugPrintStr("A   PAUSE ", 11, 14);
 			} else {
 				DebugPrintStr("A   PLAY  ", 11, 14);
-			}
-			break;
+            }
+            */
+            break;
 		case 2:
 			if ((gJoypad.heldKeys & DPAD_LEFT) || (gJoypad.pressedKeys & L_BUTTON)) {
 				SCROLL_FAST_WITH_B(sound->unk8, -1)
@@ -432,29 +433,32 @@ void sub_8011714(struct DebugContext *ctx) {
     
     DebugPrintStr(" PAN L             R", 5, 8);
 	DebugPrintStr("*", sound->unkC / 20 + 17, 8);
+    /*
 	if (gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE) {
 		if(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_TRACK) {
             DebugPrintStr("PAUSE ", 15, 6);
         } else {
             DebugPrintStr("STOP  ", 15, 6);    
-        }
-	} else {
-		DebugPrintStr("PLAY ", 15, 6);
-	}
+    }
+} else {
+    DebugPrintStr("PLAY ", 15, 6);
+}
+*/
 	DebugPrintStr(">", 5, 5 + sound->unk6);
 }
 
 void sub_8011C08(struct DebugContext *ctx) {
 	struct SoundDebug *sound = &ctx->menu.sound;
-
-    if(!(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE) && gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_TRACK)
-        return;
-    PlayBGM(sound->unk2);
-    m4aMPlayImmInit(&gMPlayInfo_BGM);
-    ChangeTrackVolume(1, sound->unk8);
-    ChangeTrackPanning(1, sound->unkC);
-    sound->unk0 = sound->unk2;
-    ctx->unk1--;
+/*
+if(!(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE) && gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_TRACK)
+return;
+PlayBGM(sound->unk2);
+//m4aMPlayImmInit(&gMPlayInfo_BGM);
+ChangeTrackVolume(1, sound->unk8);
+ChangeTrackPanning(1, sound->unkC);
+sound->unk0 = sound->unk2;
+ctx->unk1--;
+*/
 }
 
 void (*gUnknown_0814DC64[])(struct DebugContext *ctx) = {

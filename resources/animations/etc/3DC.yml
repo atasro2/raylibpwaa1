@@ -1,0 +1,98 @@
+sheet: sheet-85B4
+arrangements:
+  '80':
+  - part: 0
+    x: 112
+    y: 48
+    palette: 0
+  '88':
+  - part: 1
+    x: 112
+    y: 48
+    palette: 0
+  '96':
+  - part: 2
+    x: 112
+    y: 48
+    palette: 0
+  '104':
+  - part: 3
+    x: 112
+    y: 48
+    palette: 0
+  '112':
+  - part: 4
+    x: 112
+    y: 48
+    palette: 0
+  '120':
+  - part: 5
+    x: 112
+    y: 48
+    palette: 0
+  '128':
+  - part: 6
+    x: 112
+    y: 48
+    palette: 0
+  '136':
+  - part: 7
+    x: 112
+    y: 48
+    palette: 0
+  '144':
+frames:
+- duration: 22
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 80
+- duration: 22
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 88
+- duration: 22
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 96
+- duration: 22
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 104
+- duration: 23
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 112
+- duration: 23
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 120
+- duration: 23
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 128
+- duration: 23
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 136
+- duration: 254
+  flag10: False
+  flag40: False
+  sfx:
+  action:
+  arrangement: 80
