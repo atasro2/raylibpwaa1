@@ -707,14 +707,14 @@ const struct ExaminationData gExaminationData_1_2_07[6] = {
 
 void InvestigationSegmentSetup_1_2(struct Main *main)
 {
-    DmaCopy16(3, gRoomData_1_2, gMain.roomData, 0x30);
-    DmaCopy16(3, gTalkData_1_2, gTalkData, 0x104);
+    memcpy(gMain.roomData, gRoomData_1_2, sizeof(gRoomData_1_2));
+    memcpy(gTalkData, gTalkData_1_2, sizeof(gTalkData_1_2));
     main->currentRoomId = 2;
 }
 
 void InvestigationRoomSetup_1_2(struct Main *main)
 {
-    DmaFill16(3, 0xFFFF, gExaminationData, sizeof(gExaminationData));
+    memset(gExaminationData, 0xFFFF, sizeof(gExaminationData));
     switch(main->currentRoomId) {
         case 0: {
             if(!GetFlag(0, 0x74)) {

@@ -14,6 +14,8 @@ uniform vec4 colDiffuse;
 uniform float intensity;
 uniform int blendMode;
 
+out vec4 finalColor;
+
 void main()
 {
     // Texel color fetching from texture sampler
@@ -35,5 +37,5 @@ void main()
         texelColor.g += (1.0-texelColor.g)*intensity;
         texelColor.b += (1.0-texelColor.b)*intensity;
     }
-    gl_FragColor = texelColor*colDiffuse;
+    finalColor = texelColor;
 }

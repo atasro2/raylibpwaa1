@@ -114,8 +114,7 @@ void DrawFrame(void) {
                 DrawBackground();
             EndMode2D();
             
-            rlSetBlendFactors(RL_SRC_ALPHA, RL_ONE_MINUS_SRC_ALPHA, RL_FUNC_ADD);
-            BeginBlendMode(BLEND_CUSTOM);
+            BeginBlendMode(RL_BLEND_ALPHA_PREMULTIPLY);
                 DrawTexturePro(animationRenderTexture.texture, (Rectangle) { 0, 0, (float)animationRenderTexture.texture.width, (float)-animationRenderTexture.texture.height }, (Rectangle) { 0, 0, (float)screenWidth, (float)screenHeight }, (Vector2) { 0, 0 }, 0, WHITE);
             EndBlendMode();
             

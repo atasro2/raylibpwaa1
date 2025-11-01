@@ -19,7 +19,6 @@ void main()
     if(index == 0) finalColor = vec4(0, 0, 0, 0);
     else {
         texelColor.x = (float(index + (fragColor.b*255)*16))/255;
-        finalColor = texture(palette, texelColor.xy);
-        finalColor.a = fragColor.a;
+        finalColor = texture(palette, texelColor.xy) * fragColor.a;
     }
 }

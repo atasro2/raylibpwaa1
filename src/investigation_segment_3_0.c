@@ -1249,14 +1249,14 @@ const struct ExaminationData gExaminationData_3_0_08[5] = {
 
 void InvestigationSegmentSetup_3_0(struct Main *main)
 {
-    DmaCopy16(3, gRoomData_3_0, gMain.roomData, sizeof(gRoomData_3_0));
-    DmaCopy16(3, gTalkData_3_0, gTalkData, sizeof(gTalkData_3_0));
+    memcpy(gMain.roomData, gRoomData_3_0, sizeof(gRoomData_3_0));
+    memcpy(gTalkData, gTalkData_3_0, sizeof(gTalkData_3_0));
     main->currentRoomId = 6;
 }
 
 void InvestigationRoomSetup_3_0(struct Main *main)
 {
-    DmaFill16(3, 0xFFFF, gExaminationData, sizeof(gExaminationData));
+    memset(gExaminationData, 0xFFFF, sizeof(gExaminationData));
     switch(main->currentRoomId) {
         case 6: {
             if(GetFlag(0, 0xA2)) {

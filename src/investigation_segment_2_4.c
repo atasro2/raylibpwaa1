@@ -995,14 +995,14 @@ const struct ExaminationData gExaminationData_2_4_08[7] = {
 
 void InvestigationSegmentSetup_2_4(struct Main *main)
 {
-    DmaCopy16(3, gRoomData_2_4, gMain.roomData, sizeof(gRoomData_2_4));
-    DmaCopy16(3, gTalkData_2_4, gTalkData, sizeof(gTalkData_2_4));
+    memcpy(gMain.roomData, gRoomData_2_4, sizeof(gRoomData_2_4));
+    memcpy(gTalkData, gTalkData_2_4, sizeof(gTalkData_2_4));
     main->currentRoomId = 6;
 }
 
 void InvestigationRoomSetup_2_4(struct Main *main)
 {
-    DmaFill16(3, 0xFFFF, gExaminationData, sizeof(gExaminationData));
+    memset(gExaminationData, 0xFFFF, sizeof(gExaminationData));
     switch(main->currentRoomId) {
         case 6: {
             if(GetFlag(0, 0xE0)) {
